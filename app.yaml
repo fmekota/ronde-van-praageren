@@ -1,4 +1,4 @@
-service: ronde-van-praageren
+service: default
 runtime: python310 
 entrypoint: gunicorn -b :$PORT main:app  
 
