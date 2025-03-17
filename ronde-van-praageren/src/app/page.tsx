@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FormEvent, useState, useEffect } from "react";
 
 export default function Home() {
@@ -114,7 +113,7 @@ export default function Home() {
           {isSubmitted ? (
             <div className="max-w-lg mx-auto bg-green-50 dark:bg-green-900 p-6 rounded-lg text-center">
               <h3 className="text-xl font-semibold mb-2 text-green-600 dark:text-green-400">Registration Successful!</h3>
-              <p className="text-gray-700 dark:text-gray-300">Thank you for registering for the Ronde van Praageren cycling race. We'll be in touch soon with more details.</p>
+              <p className="text-gray-700 dark:text-gray-300">Thank you for registering for the Ronde van Praageren cycling race. We&apos;ll be in touch soon with more details.</p>
             </div>
           ) : (
             <form 
