@@ -1,14 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export default function Home() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // This would typically handle form submission
-    // For now, we'll just alert the user
-    alert("Form submitted! In a real implementation, this would send your registration.");
+    setIsSubmitting(true);
+
+    // In a real implementation, you would submit to Formspree here
+    // For example:
+    // const formData = new FormData(e.currentTarget);
+    // await fetch('https://formspree.io/f/your-form-id', {
+    //   method: 'POST',
+    //   body: formData,
+    //   headers: {
+    //     'Accept': 'application/json'
+    //   }
+    // });
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 1000);
   };
 
   return (
@@ -78,52 +96,71 @@ export default function Home() {
         {/* Registration Form Section */}
         <section id="register" className="mb-16 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Register Now</h2>
-          <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              />
+          
+          {isSubmitted ? (
+            <div className="max-w-lg mx-auto bg-green-50 dark:bg-green-900 p-6 rounded-lg text-center">
+              <h3 className="text-xl font-semibold mb-2 text-green-600 dark:text-green-400">Registration Successful!</h3>
+              <p className="text-gray-700 dark:text-gray-300">Thank you for registering for the Ronde van Praageren cycling race. We'll be in touch soon with more details.</p>
             </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">
-                Message (Optional)
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300"
+          ) : (
+            <form 
+              onSubmit={handleSubmit} 
+              className="max-w-lg mx-auto"
+              // Uncomment and add your Formspree endpoint in production
+              // action="https://formspree.io/f/your-form-id"
+              // method="POST"
             >
-              Submit Registration
-            </button>
-            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-              * Form submissions will be sent via Formspree. Replace the form action with your Formspree endpoint in production.
-            </p>
-          </form>
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                />
+              </div>
+              <div className="mb-6">
+                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">
+                  Message (Optional)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full font-bold py-3 px-4 rounded-md transition duration-300 ${
+                  isSubmitting 
+                    ? 'bg-blue-400 cursor-not-allowed' 
+                    : 'bg-blue-600 hover:bg-blue-700 text-white'
+                }`}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Registration'}
+              </button>
+              <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                * Form submissions will be sent via Formspree. Replace the form action with your Formspree endpoint in production.
+              </p>
+            </form>
+          )}
         </section>
       </main>
 
@@ -135,7 +172,7 @@ export default function Home() {
               <p className="text-gray-400">The premier cycling event in Prague</p>
             </div>
             <div>
-              <p className="text-gray-400">© 2024 Ronde van Praageren. All rights reserved.</p>
+              <p className="text-gray-400">© 2025 Ronde van Praageren. All rights reserved.</p>
             </div>
           </div>
         </div>
