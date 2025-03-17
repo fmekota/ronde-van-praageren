@@ -1,11 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Load Strava embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://strava-embeds.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -84,12 +96,14 @@ export default function Home() {
         <section id="route" className="mb-16 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Race Route</h2>
           <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-            {/* Replace with your Strava embed code */}
-            <div className="bg-gray-200 dark:bg-gray-700 w-full h-96 flex items-center justify-center">
-              <p className="text-gray-500 dark:text-gray-400">
-                Strava map will be embedded here. Please provide your embed link.
-              </p>
-            </div>
+            {/* Strava embed code */}
+            <div 
+              className="strava-embed-placeholder" 
+              data-embed-type="route" 
+              data-embed-id="3199162964264401098" 
+              data-style="standard" 
+              data-from-embed="false"
+            ></div>
           </div>
         </section>
 

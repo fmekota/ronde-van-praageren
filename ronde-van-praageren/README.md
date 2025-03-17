@@ -45,25 +45,24 @@ yarn dev
 
 ### Strava Map Integration
 
-To add your Strava route map:
+The website already includes a Strava route map with ID 3199162964264401098. If you want to use a different route:
 
 1. Go to your Strava route
 2. Click on the "Share" button
-3. Select "Embed" and copy the iframe code
-4. Replace the placeholder in `src/app/page.tsx` in the Route Map section with your iframe code:
+3. Select "Embed" and copy the embed code
+4. Replace the existing Strava embed code in `src/app/page.tsx` with your new embed code:
 
 ```jsx
-<div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-  {/* Replace this div with your Strava embed code */}
-  <iframe 
-    height="100%" 
-    width="100%" 
-    frameBorder="0" 
-    scrolling="no" 
-    src="https://www.strava.com/routes/YOUR_ROUTE_ID/embed"
-  ></iframe>
-</div>
+<div 
+  className="strava-embed-placeholder" 
+  data-embed-type="route" 
+  data-embed-id="YOUR_ROUTE_ID_HERE" 
+  data-style="standard" 
+  data-from-embed="false"
+></div>
 ```
+
+The script to load the Strava embed is already included in the page component.
 
 ### Form Submission
 
