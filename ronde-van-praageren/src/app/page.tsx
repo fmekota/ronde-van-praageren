@@ -75,18 +75,18 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Date & Time</h3>
-              <p className="text-gray-700 dark:text-gray-300">September 15, 2024</p>
+              <p className="text-gray-700 dark:text-gray-300">March 29, 2025</p>
               <p className="text-gray-700 dark:text-gray-300">Starting at 9:00 AM</p>
             </div>
             <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Location</h3>
               <p className="text-gray-700 dark:text-gray-300">Prague City Center</p>
-              <p className="text-gray-700 dark:text-gray-300">Starting Point: Old Town Square</p>
+              <p className="text-gray-700 dark:text-gray-300">Starting Point: Výstaviště</p>
             </div>
             <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Distance</h3>
-              <p className="text-gray-700 dark:text-gray-300">60km Main Race</p>
-              <p className="text-gray-700 dark:text-gray-300">30km Leisure Ride</p>
+              <p className="text-gray-700 dark:text-gray-300">110km Main Race</p>
+              <p className="text-gray-700 dark:text-gray-300">110km Leisure Ride</p>
             </div>
           </div>
         </section>
