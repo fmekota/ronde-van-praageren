@@ -130,6 +130,31 @@ This website is optimized for deployment on Vercel. Follow these steps for a sea
    - Any changes pushed to your GitHub repository will automatically trigger a new deployment
    - You can configure branch deployments in the project settings
 
+#### Troubleshooting Vercel Deployment
+
+If you encounter the error "No Next.js version could be detected in your project":
+
+1. Ensure your package.json has Next.js listed in the dependencies section (not just devDependencies):
+```json
+"dependencies": {
+  "next": "15.2.2",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0"
+}
+```
+
+2. Make sure the vercel.json file exists in your project root with the following content:
+```json
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install"
+}
+```
+
+3. Try redeploying after making these changes.
+
 ### Alternative Deployment Options
 
 #### Static Export for Other Hosting Services

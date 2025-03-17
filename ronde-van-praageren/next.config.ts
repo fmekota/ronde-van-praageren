@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     domains: ['vercel.com'],
   },
   trailingSlash: true,
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
 };
 
 export default nextConfig;
