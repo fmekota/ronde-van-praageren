@@ -8,8 +8,8 @@ export default function Home() {
 
   // Load Strava embed script
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://strava-embeds.com/embed.js';
+    const script = document.createElement("script");
+    script.src = "https://strava-embeds.com/embed.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -25,11 +25,11 @@ export default function Home() {
     // In a real implementation, you would submit to Formspree here
     // For example:
     // const formData = new FormData(e.currentTarget);
-    // await fetch('https://formspree.io/f/your-form-id', {
-    //   method: 'POST',
+    // await fetch("https://formspree.io/f/your-form-id", {
+    //   method: "POST",
     //   body: formData,
     //   headers: {
-    //     'Accept': 'application/json'
+    //     "Accept": "application/json"
     //   }
     // });
 
@@ -66,7 +66,7 @@ export default function Home() {
             RONDE VAN PRAAGEREN
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Challenge yourself in Prague's premier cycling event
+            Challenge yourself in Prague&apos;s premier cycling event
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
             <p className="text-2xl font-bold">March 29, 2025</p>
@@ -147,7 +147,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-dark-blue">Race Route</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore the challenging 110km route through Prague's most scenic landscapes
+                Explore the challenging 110km route through Prague&apos;s most scenic landscapes
               </p>
             </div>
             
@@ -243,7 +243,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-dark-blue">Our Sponsors</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're grateful to our amazing sponsors who make this event possible
+              We&apos;re grateful to our amazing sponsors who make this event possible
             </p>
           </div>
           
@@ -312,7 +312,7 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    "The Ronde van Praageren was the most challenging and rewarding cycling experience I've had. The course was beautiful and the organization was flawless."
+                    &ldquo;The Ronde van Praageren was the most challenging and rewarding cycling experience I&apos;ve had. The course was beautiful and the organization was flawless.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
@@ -333,7 +333,7 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    "I've participated in many races across Europe, but the atmosphere at Ronde van Praageren is truly special. The locals cheering along the route gave me energy to push through the tough climbs."
+                    &ldquo;I&apos;ve participated in many races across Europe, but the atmosphere at Ronde van Praageren is truly special. The locals cheering along the route gave me energy to push through the tough climbs.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
@@ -354,13 +354,13 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    "What stands out about this race is the amazing support from volunteers and fellow cyclists. The rest stops were well-stocked and the after-party was fantastic!"
+                    &ldquo;What stands out about this race is the amazing support from volunteers and fellow cyclists. The rest stops were well-stocked and the after-party was fantastic!&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
                       <h4 className="font-bold text-dark-blue">Tomáš Dvořák</h4>
-                      <p className="text-gray-600">2023 & 2024 Participant</p>
+                      <p className="text-gray-600">2023 &amp; 2024 Participant</p>
                     </div>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for the Challenge?</h2>
               <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                Join hundreds of cyclists in Prague's most exciting race event
+                Join hundreds of cyclists in Prague&apos;s most exciting race event
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                 <a href="#register" className="btn-primary py-4 px-8 text-lg rounded-md">
@@ -418,13 +418,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Registration Form Section - Updated with new design */}
+        {/* Registration Form Section - Fixing unescaped entities */}
         <section id="register" className="mb-24 py-16 bg-dark-blue -mx-4 px-4 text-white">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">Register Now</h2>
               <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-                Secure your spot in Prague's most exciting cycling event
+                Secure your spot in Prague&apos;s most exciting cycling event
               </p>
             </div>
             
@@ -512,10 +512,10 @@ export default function Home() {
                       type="submit"
                       disabled={isSubmitting}
                       className={`btn-primary w-full py-3 px-6 rounded-md transition-all ${
-                        isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                        isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                       }`}
                     >
-                      {isSubmitting ? 'Processing...' : 'Submit Registration'}
+                      {isSubmitting ? "Processing..." : "Submit Registration"}
                     </button>
                     <p className="mt-4 text-sm text-gray-600">
                       * Required fields. We&apos;ll never share your information.
