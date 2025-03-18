@@ -3,10 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
+  --primary: #FF5733; /* Orange-red from Canva design */
+  --primary-hover: #E64A2E;
   --secondary: #f3f4f6;
-  --accent: #3b82f6;
+  --accent: #3CAEA3; /* Teal accent from Canva design */
+  --yellow-accent: #F6D55C; /* Yellow accent from Canva design */
+  --dark-blue: #20639B; /* Dark blue from Canva design */
+  --light-blue: #3CAEA3; /* Light blue/teal from Canva design */
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-yellow-accent: var(--yellow-accent);
+  --color-dark-blue: var(--dark-blue);
+  --color-light-blue: var(--light-blue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -24,10 +30,13 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
+    --primary: #FF5733;
+    --primary-hover: #E64A2E;
     --secondary: #1f2937;
-    --accent: #60a5fa;
+    --accent: #3CAEA3;
+    --yellow-accent: #F6D55C;
+    --dark-blue: #20639B;
+    --light-blue: #3CAEA3;
   }
 }
 
@@ -56,4 +65,81 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+/* Hero section with background image */
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero-cycling.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Custom button styles matching Canva design */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styles matching Canva design */
+.card-custom {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline styles for event schedule */
+.timeline-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 2.5rem;
+  bottom: -1.5rem;
+  width: 2px;
+  background-color: var(--accent);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-marker {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* Custom header with gradient overlay from Canva design */
+.header-gradient {
+  background: linear-gradient(90deg, var(--dark-blue) 0%, var(--primary) 100%);
 }
