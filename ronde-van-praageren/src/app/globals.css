@@ -10,6 +10,10 @@
   --yellow-accent: #F6D55C; /* Yellow accent from Canva design */
   --dark-blue: #20639B; /* Dark blue from Canva design */
   --light-blue: #3CAEA3; /* Light blue/teal from Canva design */
+  --brown-700: #8B5A2B; /* Brown for buttons */
+  --brown-800: #704722; /* Darker brown for hover */
+  --olive-600: #808000; /* Olive green for middle button */
+  --olive-700: #556B2F; /* Darker olive for hover */
 }
 
 @theme inline {
@@ -22,6 +26,10 @@
   --color-yellow-accent: var(--yellow-accent);
   --color-dark-blue: var(--dark-blue);
   --color-light-blue: var(--light-blue);
+  --color-brown-700: var(--brown-700);
+  --color-brown-800: var(--brown-800);
+  --color-olive-600: var(--olive-600);
+  --color-olive-700: var(--olive-700);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -69,10 +77,23 @@ html {
 
 /* Hero section with background image */
 .hero-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero-cycling.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/cobblestone-cyclists.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Create a yellow bar at bottom of hero section like in the design */
+.hero-background::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--yellow-accent);
 }
 
 /* Custom button styles matching Canva design */
@@ -142,4 +163,33 @@ html {
 /* Custom header with gradient overlay from Canva design */
 .header-gradient {
   background: linear-gradient(90deg, var(--dark-blue) 0%, var(--primary) 100%);
+}
+
+/* Custom utility classes for our new colors */
+.text-brown-800 {
+  color: var(--brown-800);
+}
+
+.bg-brown-700 {
+  background-color: var(--brown-700);
+}
+
+.bg-brown-800 {
+  background-color: var(--brown-800);
+}
+
+.bg-olive-600 {
+  background-color: var(--olive-600);
+}
+
+.bg-olive-700 {
+  background-color: var(--olive-700);
+}
+
+.hover\:bg-brown-800:hover {
+  background-color: var(--brown-800);
+}
+
+.hover\:bg-olive-700:hover {
+  background-color: var(--olive-700);
 }

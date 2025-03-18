@@ -45,9 +45,24 @@ export default function Home() {
       {/* Header - Updated with gradient background and new design */}
       <header className="header-gradient text-white shadow-md">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">
-            Ronde van Praageren
-          </h1>
+          <div className="flex items-center">
+            <div className="mr-3">
+              <div className="w-14 h-14 relative">
+                <div className="absolute w-full h-full bg-yellow-accent rounded-sm transform rotate-6"></div>
+                <div className="absolute w-8 h-8 bg-primary rounded-sm top-1 left-4"></div>
+                <div className="absolute w-6 h-6 bg-accent rounded-sm bottom-2 right-1"></div>
+                <div className="absolute w-4 h-4 bg-dark-blue rounded-sm bottom-3 left-2"></div>
+                <div className="absolute w-4 h-4 bg-black rounded-sm top-3 right-3"></div>
+                <div className="absolute w-3 h-3 bg-gray-400 rounded-sm top-6 left-5"></div>
+              </div>
+            </div>
+            <div>
+              <h1 className="text-xl md:text-2xl font-bold text-white tracking-wider uppercase">
+                Ronde Van<br />Praageren
+              </h1>
+              <p className="text-xs text-gray-300">by CC Currywurst</p>
+            </div>
+          </div>
           <nav>
             <ul className="flex space-x-6">
               <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors">Event</a></li>
@@ -59,21 +74,17 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section - Completely redesigned with background image and centered content */}
+      {/* Hero Section - Redesigned to match Canva design with cobblestone theme */}
       <section className="hero-background text-white py-32">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            RONDE VAN PRAAGEREN
+        <div className="container mx-auto px-4 text-left md:text-left">
+          <h2 className="text-6xl md:text-8xl font-bold mb-6 uppercase leading-tight">
+            Are You<br />Cobbles Ready?
           </h2>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Challenge yourself in Prague&apos;s premier cycling event
-          </p>
-          <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
-            <p className="text-2xl font-bold">March 29, 2025</p>
-            <span className="hidden md:block">•</span>
-            <p className="text-2xl font-bold">Prague, Czech Republic</p>
+          <div className="mb-8">
+            <p className="text-xl md:text-2xl font-medium">4th Annual Prague Cobbled Classic</p>
+            <p className="text-xl md:text-2xl font-bold">APRIL 6, 2024</p>
           </div>
-          <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+          <div className="mt-12 flex flex-col md:flex-row gap-4">
             <a 
               href="#register" 
               className="btn-primary py-3 px-8 text-lg rounded-md"
@@ -90,6 +101,67 @@ export default function Home() {
               </svg>
               Download Brochure
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* THE FAST FACTS Section - Added to match Canva design */}
+      <section className="py-20 bg-yellow-accent">
+        <div className="container mx-auto px-4">
+          <h2 className="text-5xl md:text-6xl font-bold mb-20 text-brown-800 text-center tracking-wide uppercase">
+            THE FAST FACTS
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 - Ronde History */}
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <div className="flex justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide uppercase">RONDE HISTORY</h3>
+              <p className="text-gray-700 mb-8">
+                Take a look at the history of<br />Ronde van Praageren
+              </p>
+              <a href="#history" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
+                TAKE THE HISTORY PATH
+              </a>
+            </div>
+            
+            {/* Card 2 - The Course */}
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <div className="flex justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-17a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide uppercase">THE COURSE</h3>
+              <p className="text-gray-700 mb-8">
+                Read important information on<br />the course and distance
+              </p>
+              <a href="#route" className="inline-block py-3 px-6 bg-olive-600 text-white font-bold rounded hover:bg-olive-700 transition duration-300 uppercase tracking-wide">
+                EXPLORE COURSE
+              </a>
+            </div>
+            
+            {/* Card 3 - Registration */}
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <div className="flex justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 3v4a1 1 0 001 1h4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide uppercase">REGISTRATION</h3>
+              <p className="text-gray-700 mb-8">
+                Find out when and where to<br />register for Ronde
+              </p>
+              <a href="#register" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
+                LEARN MORE
+              </a>
+            </div>
           </div>
         </div>
       </section>
