@@ -441,6 +441,54 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FOLLOW THE RACE Section - Added to match Canva design */}
+        <section className="mb-24 py-20 bg-gray-50 -mx-4 px-4">
+          <div className="container mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Left Column - Text content */}
+              <div className="flex flex-col justify-start">
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 text-olive-500 uppercase tracking-wide leading-tight">
+                  FOLLOW<br />THE RACE
+                </h2>
+                <p className="text-xl text-gray-700 mb-12">
+                  Study the terrain, even as you train.
+                </p>
+                
+                <div className="bg-white p-8 rounded-lg shadow-lg relative">
+                  <div className="flex flex-col">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto">
+                      <img src="/race-director.jpg" alt="Race Director" className="w-full h-full object-cover" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 text-center">Race Director Message</h3>
+                    <p className="text-center text-gray-500 mb-8">TBD</p>
+                    <div className="text-center">
+                      <a href="#" className="inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Column - Map */}
+              <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+                <div className="aspect-w-16 aspect-h-9">
+                  {/* Strava embed code for the race route */}
+                  <div 
+                    className="strava-embed-placeholder" 
+                    data-embed-type="route" 
+                    data-embed-id="3199162964264401098" 
+                    data-style="standard" 
+                    data-from-embed="false"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action Section - New section */}
         <section className="mb-24 py-16 bg-dark-blue text-white -mx-4 px-4 overflow-hidden relative">
           <div className="absolute inset-0 opacity-10">
@@ -455,11 +503,11 @@ export default function Home() {
                 Join hundreds of cyclists in Prague&apos;s most exciting race event
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#register" className="btn-primary py-4 px-8 text-lg rounded-md">
-                  Register Now
+                <a href="#route" className="btn-primary py-4 px-8 text-lg rounded-md">
+                  Explore the Route
                 </a>
-                <a href="#route" className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300">
-                  View the Route
+                <a href="#" className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300">
+                  Sign up for Updates
                 </a>
               </div>
               <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
@@ -490,7 +538,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Registration Form Section - Fixing unescaped entities */}
+        {/* Registration Form Section - Hidden for now 
         <section id="register" className="mb-24 py-16 bg-dark-blue -mx-4 px-4 text-white">
           <div className="container mx-auto">
             <div className="text-center mb-12">
@@ -598,6 +646,7 @@ export default function Home() {
             )}
           </div>
         </section>
+        */}
       </main>
 
       {/* Footer - Updated with new design */}
@@ -622,7 +671,7 @@ export default function Home() {
                 </a>
                 <a href="#" className="text-white hover:text-yellow-accent">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.668-.07 4.948-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
