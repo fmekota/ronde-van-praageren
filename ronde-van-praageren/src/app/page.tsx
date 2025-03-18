@@ -1,11 +1,9 @@
 "use client";
 
-import { FormEvent, useState, useEffect } from "react";
+import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   // Load Strava embed script
   useEffect(() => {
     const script = document.createElement("script");
@@ -17,28 +15,6 @@ export default function Home() {
       document.body.removeChild(script);
     };
   }, []);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // In a real implementation, you would submit to Formspree here
-    // For example:
-    // const formData = new FormData(e.currentTarget);
-    // await fetch("https://formspree.io/f/your-form-id", {
-    //   method: "POST",
-    //   body: formData,
-    //   headers: {
-    //     "Accept": "application/json"
-    //   }
-    // });
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1000);
-  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -456,8 +432,14 @@ export default function Home() {
                 
                 <div className="bg-white p-8 rounded-lg shadow-lg relative">
                   <div className="flex flex-col">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto">
-                      <img src="/race-director.jpg" alt="Race Director" className="w-full h-full object-cover" />
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto relative">
+                      <Image 
+                        src="/race-director.jpg" 
+                        alt="Race Director" 
+                        className="object-cover"
+                        fill 
+                        sizes="(max-width: 768px) 100vw, 128px"
+                      />
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-center">Race Director Message</h3>
                     <p className="text-center text-gray-500 mb-8">TBD</p>
@@ -538,7 +520,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Registration Form Section - Hidden for now 
+        {/* Registration Form Section (temporarily disabled) */}
+        {/* Uncomment this section when registration is ready
         <section id="register" className="mb-24 py-16 bg-dark-blue -mx-4 px-4 text-white">
           <div className="container mx-auto">
             <div className="text-center mb-12">
@@ -547,103 +530,6 @@ export default function Home() {
                 Secure your spot in Prague&apos;s most exciting cycling event
               </p>
             </div>
-            
-            {isSubmitted ? (
-              <div className="max-w-lg mx-auto bg-green-600 bg-opacity-20 p-8 rounded-lg text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Registration Successful!</h3>
-                <p className="text-gray-200">
-                  Thank you for registering for the Ronde van Praageren cycling race. We&apos;ll be in touch soon with more details.
-                </p>
-              </div>
-            ) : (
-              <div className="max-w-xl mx-auto bg-white text-gray-800 p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-dark-blue text-center">Your Details</h3>
-                <form 
-                  onSubmit={handleSubmit} 
-                  className="space-y-6"
-                  // Uncomment and add your Formspree endpoint in production
-                  // action="https://formspree.io/f/your-form-id"
-                  // method="POST"
-                >
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="category" className="block text-gray-700 font-medium mb-2">
-                      Race Category *
-                    </label>
-                    <select
-                      id="category"
-                      name="category"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                    >
-                      <option value="">Select a category</option>
-                      <option value="main">Main Race (110km)</option>
-                      <option value="leisure">Leisure Ride (45km)</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                      Additional Information (Optional)
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                      placeholder="Any special requirements or questions?"
-                    ></textarea>
-                  </div>
-                  
-                  <div className="text-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={`btn-primary w-full py-3 px-6 rounded-md transition-all ${
-                        isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-                      }`}
-                    >
-                      {isSubmitting ? "Processing..." : "Submit Registration"}
-                    </button>
-                    <p className="mt-4 text-sm text-gray-600">
-                      * Required fields. We&apos;ll never share your information.
-                    </p>
-                  </div>
-                </form>
-              </div>
-            )}
           </div>
         </section>
         */}
