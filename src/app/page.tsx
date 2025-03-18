@@ -42,10 +42,10 @@ export default function Home() {
           </div>
           <nav>
             <ul className="flex space-x-8">
-              <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium">Event</a></li>
-              <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium">Route</a></li>
-              <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium">Schedule</a></li>
-              <li><a href="#register" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium">Register</a></li>
+              <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium font-heading">Event</a></li>
+              <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium font-heading">Route</a></li>
+              <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium font-heading">Schedule</a></li>
+              <li><a href="#register" className="text-white hover:text-yellow-accent transition-colors uppercase text-sm font-medium font-heading">Register</a></li>
             </ul>
           </nav>
         </div>
@@ -73,8 +73,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4 items-center">
-              <a href="#register" className="bg-yellow-accent text-black font-bold py-3 px-8 rounded-sm hover:bg-yellow-500 transition-colors uppercase tracking-wider">Register Now</a>
-              <a href="#" className="border border-white py-3 px-8 rounded-sm hover:bg-white hover:text-black transition-colors uppercase tracking-wider font-medium">Download Brochure</a>
+              <a href="#register" className="bg-yellow-accent text-black font-bold py-3 px-8 rounded-sm hover:bg-yellow-500 transition-colors uppercase tracking-wider font-heading">Register Now</a>
+              <a href="#" className="border border-white py-3 px-8 rounded-sm hover:bg-white hover:text-black transition-colors uppercase tracking-wider font-medium font-heading">Download Brochure</a>
             </div>
           </div>
         </div>
@@ -83,7 +83,9 @@ export default function Home() {
       {/* Fast Facts Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center uppercase tracking-widest">The Fast Facts</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center uppercase tracking-widest">
+            <span className="border-b-4 border-primary pb-2">The Fast Facts</span>
+          </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Ronde History Card */}
@@ -93,7 +95,7 @@ export default function Home() {
                 Inspired by the Tour of Flanders, our event brings the Belgian classic experience to Prague's cobblestone sectors.
                 Now in its 4th year, the race has grown from 50 to over 300 participants.
               </p>
-              <a href="#history" className="text-primary font-medium hover:underline">Read more →</a>
+              <a href="#history" className="text-primary font-medium hover:underline font-heading">Read more →</a>
             </div>
             
             {/* Race Format Card */}
@@ -103,7 +105,7 @@ export default function Home() {
                 A challenging 140km route featuring 12 cobblestone sectors totaling 20km.
                 Categories for men, women, and masters with prizes for each division.
               </p>
-              <a href="#format" className="text-primary font-medium hover:underline">View details →</a>
+              <a href="#format" className="text-primary font-medium hover:underline font-heading">View details →</a>
             </div>
             
             {/* Support Card */}
@@ -113,7 +115,7 @@ export default function Home() {
                 Full mechanical support, feed zones every 30km, and medical teams throughout the course.
                 Post-race beer and Belgian waffles for all finishers.
               </p>
-              <a href="#support" className="text-primary font-medium hover:underline">Learn more →</a>
+              <a href="#support" className="text-primary font-medium hover:underline font-heading">Learn more →</a>
             </div>
           </div>
         </div>
@@ -124,21 +126,23 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-olive-500 uppercase tracking-widest">Follow The Race</h2>
+              <h2 className="text-3xl font-bold mb-6 text-olive-500 uppercase tracking-widest">
+                <span className="border-b-4 border-olive-500 pb-2">Follow The Race</span>
+              </h2>
               <p className="text-gray-700 mb-8">
                 Track the event live on Strava and join our community for updates, training tips, and to connect with fellow riders. 
                 Follow our club and join group rides to prepare for the challenge ahead.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href="https://www.strava.com/clubs/123456" target="_blank" rel="noopener noreferrer" 
-                  className="bg-orange-500 text-white py-3 px-6 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-orange-600 transition-colors">
+                  className="bg-orange-500 text-white py-3 px-6 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-orange-600 transition-colors font-heading">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0 5 13.828h4.172"/>
                   </svg>
                   Join on Strava
                 </a>
                 <a href="https://www.instagram.com/rondevanpraageren" target="_blank" rel="noopener noreferrer" 
-                  className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white py-3 px-6 rounded-sm inline-flex items-center justify-center gap-2 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-colors">
+                  className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white py-3 px-6 rounded-sm inline-flex items-center justify-center gap-2 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-colors font-heading">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
@@ -156,6 +160,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
     </div>
   );
 } 
