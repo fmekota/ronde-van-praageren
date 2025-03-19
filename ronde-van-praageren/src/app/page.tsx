@@ -143,6 +143,44 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto px-4 py-12">
+        {/* Race Director Citation Section */}
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-dark-blue">From the Race Director</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A message about the spirit of Ronde van Praageren
+            </p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-12 items-center max-w-5xl mx-auto">
+            <div className="w-full md:w-1/3">
+              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/race_director.png"
+                  alt="Race Director"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            </div>
+            
+            <div className="w-full md:w-2/3">
+              <blockquote className="text-gray-700 text-lg leading-relaxed mb-6">
+                "Cyklistika má v tuzemsku obrovskou tradici. Doposud ale neexistovala jednotná platforma, která by komplexně zahrnovala vše, co nabízí. Silnička už dávno není jen nástroj pro sportovní výkon nebo závod na čas. Silnička, to je skvělá gastronomie, prostor pro spojení s uměním, designem či módou, ale také pojem s výrazným komunitním přesahem. A právě propojování všech zmíněných oblastí je hlavní myšlenkou projektu Road Classics, který nabídne ucelený koncept zážitků se silničním kolem po celý rok. Objevuj s námi silniční cyklistiku z toho nejlepšího místa. Ze sedla!.
+                <br /><br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. = tady to bude anglicky?"
+              </blockquote>
+              <div className="flex items-center">
+                <div>
+                  <p className="font-bold text-dark-blue text-xl">Janek "Pedersen" Lžičař</p>
+                  <p className="text-gray-600">Race Director, Ronde van Praageren</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Event Details Section - Updated with new card styles and icons */}
         <section id="event" className="mb-24">
           <div className="text-center mb-12">
