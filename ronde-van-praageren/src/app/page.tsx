@@ -23,14 +23,14 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center">
             <div className="mr-3">
-              <div className="w-14 h-14 relative">
-                <div className="absolute w-full h-full bg-yellow-accent rounded-sm transform rotate-6"></div>
-                <div className="absolute w-8 h-8 bg-primary rounded-sm top-1 left-4"></div>
-                <div className="absolute w-6 h-6 bg-accent rounded-sm bottom-2 right-1"></div>
-                <div className="absolute w-4 h-4 bg-dark-blue rounded-sm bottom-3 left-2"></div>
-                <div className="absolute w-4 h-4 bg-black rounded-sm top-3 right-3"></div>
-                <div className="absolute w-3 h-3 bg-gray-400 rounded-sm top-6 left-5"></div>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Ronde van Praageren Logo"
+                width={56}
+                height={56}
+                className="w-14 h-14"
+                priority
+              />
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-white tracking-wider uppercase">
@@ -57,8 +57,8 @@ export default function Home() {
             Are You<br />Cobbles Ready?
           </h2>
           <div className="mb-8">
-            <p className="text-xl md:text-2xl font-medium">4th Annual Prague Cobbled Classic</p>
-            <p className="text-xl md:text-2xl font-bold">APRIL 6, 2024</p>
+            <p className="text-xl md:text-2xl font-medium">5th Annual Prague Cobbled Classic</p>
+            <p className="text-xl md:text-2xl font-bold">March 29, 2025</p>
           </div>
           <div className="mt-12 flex flex-col md:flex-row gap-4">
             <a 
