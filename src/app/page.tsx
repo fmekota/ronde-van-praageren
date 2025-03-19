@@ -24,14 +24,14 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <div className="mr-3">
-              <div className="w-16 h-16 relative">
-                <div className="absolute w-full h-full bg-yellow-accent rounded-sm transform rotate-6"></div>
-                <div className="absolute w-8 h-8 bg-primary rounded-sm top-1 left-4"></div>
-                <div className="absolute w-6 h-6 bg-accent rounded-sm bottom-2 right-1"></div>
-                <div className="absolute w-4 h-4 bg-dark-blue rounded-sm bottom-3 left-2"></div>
-                <div className="absolute w-4 h-4 bg-black rounded-sm top-3 right-3"></div>
-                <div className="absolute w-3 h-3 bg-gray-400 rounded-sm top-6 left-5"></div>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Ronde van Praageren Logo"
+                width={64}
+                height={64}
+                className="w-16 h-16"
+                priority
+              />
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-white tracking-wider uppercase leading-tight">
