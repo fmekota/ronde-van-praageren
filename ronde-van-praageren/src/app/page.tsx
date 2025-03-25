@@ -398,13 +398,13 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;The Ronde van Praageren was the most challenging and rewarding cycling experience I&apos;ve had. The course was beautiful and the organization was flawless.&rdquo;
+                    &ldquo;Nemůžu. A nechci to jet, jděte do prdele s nějakejma kostkama.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Martin Novák</h4>
-                      <p className="text-gray-600">2024 Participant</p>
+                      <h4 className="font-bold text-dark-blue">Veronika Přikrylová</h4>
+                      <p className="text-gray-600">0 time participant</p>
                     </div>
                   </div>
                 </div>
@@ -419,13 +419,13 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;I&apos;ve participated in many races across Europe, but the atmosphere at Ronde van Praageren is truly special. The locals cheering along the route gave me energy to push through the tough climbs.&rdquo;
+                    &ldquo;Budete to mít hezký. :) climbs.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Klara Svobodová</h4>
-                      <p className="text-gray-600">3-Time Participant</p>
+                      <h4 className="font-bold text-dark-blue">Martin Práger</h4>
+                      <p className="text-gray-600">0-Time Participant</p>
                     </div>
                   </div>
                 </div>
@@ -440,13 +440,13 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;What stands out about this race is the amazing support from volunteers and fellow cyclists. The rest stops were well-stocked and the after-party was fantastic!&rdquo;
+                    &ldquo;Mam to každej rok jako vrchol sezony. Jediná věc, co mě děsí, je Jankův nástup.&rdquo;
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Tomáš Dvořák</h4>
-                      <p className="text-gray-600">2023 &amp; 2024 Participant</p>
+                      <h4 className="font-bold text-dark-blue">Filip Měkota</h4>
+                      <p className="text-gray-600">2023 &amp; 2023 Winner</p>
                     </div>
                   </div>
                 </div>
