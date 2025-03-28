@@ -415,7 +415,7 @@ export default function Home() {
             <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Elevation Gain</h3>
-                <p className="text-gray-700">1,250 meters</p>
+                <p className="text-gray-700">1400 meters</p>
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Terrain Type</h3>
@@ -423,7 +423,7 @@ export default function Home() {
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Difficulty</h3>
-                <p className="text-gray-700">Challenging</p>
+                <p className="text-gray-700">Epic</p>
               </div>
             </div>
           </div>
