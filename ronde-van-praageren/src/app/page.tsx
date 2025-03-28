@@ -44,7 +44,7 @@ export default function Home() {
               <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors">Event</a></li>
               <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors">Route</a></li>
               <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors">Schedule</a></li>
-              <li><a href="#register" className="text-white hover:text-yellow-accent transition-colors">Register</a></li>
+              <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-white hover:text-yellow-accent transition-colors" target="_blank" rel="noopener noreferrer">Register</a></li>
             </ul>
           </nav>
         </div>
@@ -62,20 +62,12 @@ export default function Home() {
           </div>
           <div className="mt-12 flex flex-col md:flex-row gap-4">
             <a 
-              href="#register" 
+              href="https://www.strava.com/clubs/1048077/group_events/1899385" 
               className="btn-primary py-3 px-8 text-lg rounded-md"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Register Now
-            </a>
-            <a 
-              href="/brochure.pdf" 
-              className="bg-transparent hover:bg-white/10 text-white py-3 px-8 border-2 border-white rounded-md transition duration-300 flex items-center justify-center gap-2"
-              download
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download Brochure
             </a>
             <a 
               href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
@@ -144,7 +136,7 @@ export default function Home() {
               <p className="text-gray-700 mb-8">
                 Find out when and where to<br />register for Ronde
               </p>
-              <a href="#register" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
+              <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide" target="_blank" rel="noopener noreferrer">
                 LEARN MORE
               </a>
             </div>
@@ -642,8 +634,8 @@ export default function Home() {
                 Join hundreds of cyclists in Prague&apos;s most authentic Flemish-style race
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#route" className="btn-primary py-4 px-8 text-lg rounded-md">
-                  Explore the Route
+                <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="btn-primary py-4 px-8 text-lg rounded-md" target="_blank" rel="noopener noreferrer">
+                  Register Now
                 </a>
                 <a 
                   href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
@@ -733,7 +725,7 @@ export default function Home() {
                 <li><a href="#event" className="text-gray-300 hover:text-yellow-accent">Event Details</a></li>
                 <li><a href="#route" className="text-gray-300 hover:text-yellow-accent">Race Route</a></li>
                 <li><a href="#schedule" className="text-gray-300 hover:text-yellow-accent">Schedule</a></li>
-                <li><a href="#register" className="text-gray-300 hover:text-yellow-accent">Registration</a></li>
+                <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-gray-300 hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">Registration</a></li>
               </ul>
             </div>
             
