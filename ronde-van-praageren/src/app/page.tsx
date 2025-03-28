@@ -295,7 +295,7 @@ export default function Home() {
                     {/* Segment 1 - Left */}
                     <div className="group relative">
                       <div className="flex items-center">
-                        <div className="relative h-12 w-12 rounded-md overflow-hidden mr-3 border border-olive-500">
+                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
                           <Image
                             src="/bustehradberg.png"
                             alt="Bustehradberg segment"
@@ -308,15 +308,15 @@ export default function Home() {
                       {/* Hover Image */}
                       <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
                         <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-64 h-40">
+                          <div className="relative w-[435px] h-[272px]">
                             <Image
-                              src="/bustehradberg.png"
-                              alt="Bustehradberg segment"
+                              src="/oude-wittemont.png"
+                              alt="Oude Wittemont segment"
                               fill
                               className="object-cover rounded"
                             />
                           </div>
-                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 420m | Grade: 6%</p>
+                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 1080m | Grade: 4,2%</p>
                         </div>
                       </div>
                     </div>
@@ -324,9 +324,9 @@ export default function Home() {
                     {/* Segment 2 - Right */}
                     <div className="group relative">
                       <div className="flex items-center justify-end md:justify-start">
-                        <div className="relative h-12 w-12 rounded-md overflow-hidden mr-3 border border-olive-500">
+                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
                           <Image
-                            src="/oude_wittemont.png"
+                            src="/oude-wittemont.png"
                             alt="Oude Wittemont segment"
                             fill
                             className="object-cover"
@@ -337,9 +337,9 @@ export default function Home() {
                       {/* Hover Image */}
                       <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
                         <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-64 h-40">
+                          <div className="relative w-[435px] h-[272px]">
                             <Image
-                              src="/oude_wittemont.png"
+                              src="/oude-wittemont.png"
                               alt="Oude Wittemont segment"
                               fill
                               className="object-cover rounded"
@@ -353,7 +353,7 @@ export default function Home() {
                     {/* Segment 3 - Left */}
                     <div className="group relative">
                       <div className="flex items-center">
-                        <div className="relative h-12 w-12 rounded-md overflow-hidden mr-3 border border-olive-500">
+                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
                           <Image
                             src="/lumiirstraat.png"
                             alt="Lumiirstraat segment"
@@ -366,7 +366,7 @@ export default function Home() {
                       {/* Hover Image */}
                       <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
                         <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-64 h-40">
+                          <div className="relative w-[435px] h-[272px]">
                             <Image
                               src="/lumiirstraat.png"
                               alt="Lumiirstraat segment"
@@ -382,9 +382,9 @@ export default function Home() {
                     {/* Segment 4 - Right */}
                     <div className="group relative">
                       <div className="flex items-center justify-end md:justify-start">
-                        <div className="relative h-12 w-12 rounded-md overflow-hidden mr-3 border border-olive-500">
+                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
                           <Image
-                            src="/praagse_burchberg.png"
+                            src="/praagse-burchberg.png"
                             alt="Praagse Burchberg segment"
                             fill
                             className="object-cover"
@@ -395,7 +395,7 @@ export default function Home() {
                       {/* Hover Image */}
                       <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
                         <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-64 h-40">
+                          <div className="relative w-[435px] h-[272px]">
                             <Image
                               src="/praagse_burchberg.png"
                               alt="Praagse Burchberg segment"
