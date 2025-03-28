@@ -873,16 +873,17 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="flex justify-center">
-              <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
-                <iframe 
-                  width="850" 
-                  height="650" 
-                  src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=47.488&lon=14.458&detailLat=50.1&detailLon=14.467&detail=true&pressure=true&message=true" 
-                  frameBorder="0"
-                  title="Weather Forecast Map"
-                  className="w-full"
-                ></iframe>
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="relative pb-[75%] sm:pb-[65%] md:pb-[60%] lg:pb-[55%]">
+                  <iframe 
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=47.488&lon=14.458&detailLat=50.1&detailLon=14.467&detail=true&pressure=true&message=true" 
+                    frameBorder="0"
+                    title="Weather Forecast Map"
+                    className="absolute inset-0 w-full h-full"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             </div>
             
