@@ -654,7 +654,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-dark-blue">Martin Práger</h4>
-                      <p className="text-gray-600">Marketingový experta cyklistický teoretik</p>
+                      <p className="text-gray-600">Marketingový expert a cyklistický teoretik</p>
                     </div>
                   </div>
                 </div>
