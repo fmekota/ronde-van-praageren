@@ -318,67 +318,57 @@ export default function Home() {
         </section>
 
         {/* Add Schedule Section after Route section */}
-        <section id="schedule" className="mb-24 py-16 bg-dark-blue text-white -mx-4 px-4">
+        <section id="schedule" className="mb-24 py-16 -mx-4 px-4">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-white">Event Schedule</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <h2 className="text-4xl font-bold mb-4 text-dark-blue">Event Schedule</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Plan your day with our detailed race schedule
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
-              <div className="schedule-item flex mb-8">
-                <div className="mr-6">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">1</div>
-                </div>
+              <div className="timeline-item">
+                <div className="timeline-marker">1</div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent">Rider Briefing</h3>
-                  <p className="text-gray-300">9:30 AM - 9:45 AM</p>
-                  <p className="text-gray-300 mt-1">Important safety information and course details will be provided.</p>
+                  <h3 className="text-xl font-bold text-dark-blue">Rider Briefing</h3>
+                  <p className="text-gray-600">9:30 AM - 9:45 AM</p>
+                  <p className="text-gray-700 mt-1">Important safety information and course details will be provided.</p>
                 </div>
               </div>
               
-              <div className="schedule-item flex mb-8">
-                <div className="mr-6">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">2</div>
-                </div>
+              <div className="timeline-item">
+                <div className="timeline-marker">2</div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent">Race Start</h3>
-                  <p className="text-gray-300">10:00 AM</p>
-                  <p className="text-gray-300 mt-1">The 110km Main Race begins</p>
+                  <h3 className="text-xl font-bold text-dark-blue">Race Start</h3>
+                  <p className="text-gray-600">10:00 AM</p>
+                  <p className="text-gray-700 mt-1">The 110km Main Race begins</p>
                 </div>
               </div>
               
-              <div className="schedule-item flex mb-8">
-                <div className="mr-6">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">3</div>
-                </div>
+              <div className="timeline-item">
+                <div className="timeline-marker">3</div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent">Coffee Break</h3>
-                  <p className="text-gray-300">Approximately 12:00 PM</p>
-                  <p className="text-gray-300 mt-1">Coffee, tea, and snacks will be available.</p>
+                  <h3 className="text-xl font-bold text-dark-blue">Coffee Break</h3>
+                  <p className="text-gray-600">Approximately 12:00 PM</p>
+                  <p className="text-gray-700 mt-1">Coffee, tea, and snacks will be available.</p>
                 </div>
               </div>
 
-              <div className="schedule-item flex mb-8">
-                <div className="mr-6">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">4</div>
-                </div>
+              <div className="timeline-item">
+                <div className="timeline-marker">4</div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent">First Riders Finish</h3>
-                  <p className="text-gray-300">Approximately 3:30 PM</p>
-                  <p className="text-gray-300 mt-1">Elite riders are expected to complete the course in around 5.5 hours.</p>
+                  <h3 className="text-xl font-bold text-dark-blue">First Riders Finish</h3>
+                  <p className="text-gray-600">Approximately 3:30 PM</p>
+                  <p className="text-gray-700 mt-1">Elite riders are expected to complete the course in around 5.5 hours.</p>
                 </div>
               </div>
               
-              <div className="schedule-item flex">
-                <div className="mr-6">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">5</div>
-                </div>
+              <div className="timeline-item">
+                <div className="timeline-marker">5</div>
                 <div>
-                  <h3 className="text-xl font-bold text-accent">Awards Ceremony</h3>
-                  <p className="text-gray-300">TBD</p>
-                  <p className="text-gray-300 mt-1">Celebration and recognition of top finishers in various categories.</p>
+                  <h3 className="text-xl font-bold text-dark-blue">Awards Ceremony</h3>
+                  <p className="text-gray-600">TBD</p>
+                  <p className="text-gray-700 mt-1">Celebration and recognition of top finishers in various categories.</p>
                 </div>
               </div>
             </div>
