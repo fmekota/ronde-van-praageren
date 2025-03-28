@@ -397,7 +397,7 @@ export default function Home() {
                         <div className="bg-white p-2 rounded-lg shadow-lg">
                           <div className="relative w-[435px] h-[272px]">
                             <Image
-                              src="/praagse_burchberg.png"
+                              src="/praagse-burchberg.png"
                               alt="Praagse Burchberg segment"
                               fill
                               className="object-cover rounded"
