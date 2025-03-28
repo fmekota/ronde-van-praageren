@@ -288,13 +288,13 @@ export default function Home() {
             </div>
 
             <div className="mt-12 p-6 bg-yellow-accent/10 rounded-md">
-              <h3 className="font-bold text-dark-blue text-2xl mb-6 font-geist-sans">Famous Segments</h3>
+              <h3 className="font-bold text-dark-blue text-3xl mb-8 font-geist-sans">Famous Segments</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Segment 1 - Left */}
                 <div className="group relative">
                   <div className="flex items-center">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
                       <Image
                         src="/bustehradberg.png"
                         alt="Bustehradberg segment"
@@ -302,7 +302,10 @@ export default function Home() {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-lg font-medium tracking-wide text-gray-800">Bustehradberg</span>
+                    <div>
+                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Bustehradberg</span>
+                      <p className="text-base font-medium text-gray-600 mt-1">Length: 420m | Grade: 6%</p>
+                    </div>
                   </div>
                   {/* Hover Image */}
                   <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
@@ -323,7 +326,7 @@ export default function Home() {
                 {/* Segment 2 - Right */}
                 <div className="group relative">
                   <div className="flex items-center justify-end md:justify-start">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
                       <Image
                         src="/oude-wittemont.png"
                         alt="Oude Wittemont segment"
@@ -331,7 +334,10 @@ export default function Home() {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-lg font-medium tracking-wide text-gray-800">Oude Wittemont</span>
+                    <div>
+                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Oude Wittemont</span>
+                      <p className="text-base font-medium text-gray-600 mt-1">Length: 1080m | Grade: 4,2%</p>
+                    </div>
                   </div>
                   {/* Hover Image */}
                   <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
@@ -344,7 +350,6 @@ export default function Home() {
                           className="object-cover rounded"
                         />
                       </div>
-                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 1080m | Grade: 4,2%</p>
                     </div>
                   </div>
                 </div>
@@ -352,7 +357,7 @@ export default function Home() {
                 {/* Segment 3 - Left */}
                 <div className="group relative">
                   <div className="flex items-center">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
                       <Image
                         src="/lumiirstraat.png"
                         alt="Lumiirstraat segment"
@@ -360,7 +365,10 @@ export default function Home() {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-lg font-medium tracking-wide text-gray-800">Lumiirstraat</span>
+                    <div>
+                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Lumiirstraat</span>
+                      <p className="text-base font-medium text-gray-600 mt-1">Length: 375m | Grade: 10%</p>
+                    </div>
                   </div>
                   {/* Hover Image */}
                   <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
@@ -373,7 +381,6 @@ export default function Home() {
                           className="object-cover rounded"
                         />
                       </div>
-                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 375m | Grade: 10%</p>
                     </div>
                   </div>
                 </div>
@@ -381,7 +388,7 @@ export default function Home() {
                 {/* Segment 4 - Right */}
                 <div className="group relative">
                   <div className="flex items-center justify-end md:justify-start">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
                       <Image
                         src="/praagse-burchberg.png"
                         alt="Praagse Burchberg segment"
@@ -389,7 +396,10 @@ export default function Home() {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-lg font-medium tracking-wide text-gray-800">Praagse Burchtberg</span>
+                    <div>
+                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Praagse Burchtberg</span>
+                      <p className="text-base font-medium text-gray-600 mt-1">Length: 990m | Grade: 7,8%</p>
+                    </div>
                   </div>
                   {/* Hover Image */}
                   <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
@@ -402,7 +412,6 @@ export default function Home() {
                           className="object-cover rounded"
                         />
                       </div>
-                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 990m | Grade: 7,8%</p>
                     </div>
                   </div>
                 </div>
