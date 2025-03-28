@@ -240,16 +240,13 @@ export default function Home() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold mb-6 text-olive-500">FOLLOW THE RACE</h3>
-                  <p className="text-lg text-gray-700 mb-8">
-                    Study the terrain, even as you train. Prepare for the cobbles of Prague
-                  </p>
-                </div>
-                
+              <div className="flex flex-col justify-center">
                 <div className="bg-white p-8 rounded-lg shadow-lg relative">
                   <div className="flex flex-col">
+                    <h3 className="text-2xl font-bold mb-6 text-olive-500 text-center">FOLLOW THE RACE</h3>
+                    <p className="text-lg text-gray-700 mb-8 text-center">
+                      Study the terrain, even as you train. Prepare for the cobbles of Prague
+                    </p>
                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto relative border-2 border-olive-500">
                       <Image 
                         src="/race_director.png" 
@@ -274,12 +271,12 @@ export default function Home() {
                 </div>
               </div>
               
-              <div>
-                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden mb-8">
-                  <div className="aspect-w-16 aspect-h-9">
+              <div className="h-full">
+                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden h-full">
+                  <div className="h-full">
                     {/* Strava embed code */}
                     <div 
-                      className="strava-embed-placeholder" 
+                      className="strava-embed-placeholder h-full" 
                       data-embed-type="route" 
                       data-embed-id="3199162964264401098" 
                       data-style="standard" 
@@ -287,125 +284,125 @@ export default function Home() {
                     ></div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-12 p-6 bg-yellow-accent/10 rounded-md">
+              <h3 className="font-bold text-dark-blue text-2xl mb-6 font-geist-sans">Famous Segments</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Segment 1 - Left */}
+                <div className="group relative">
+                  <div className="flex items-center">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                      <Image
+                        src="/bustehradberg.png"
+                        alt="Bustehradberg segment"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="text-lg font-medium tracking-wide text-gray-800">Bustehradberg</span>
+                  </div>
+                  {/* Hover Image */}
+                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-white p-2 rounded-lg shadow-lg">
+                      <div className="relative w-[435px] h-[272px]">
+                        <Image
+                          src="/bustehradberg.png"
+                          alt="Bustehradberg segment"
+                          fill
+                          className="object-cover rounded"
+                        />
+                      </div>
+                        <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 420m | Grade: 6%</p>
+                    </div>
+                  </div>
+                </div>
                 
-                <div className="p-6 bg-yellow-accent/10 rounded-md">
-                  <h3 className="font-bold text-dark-blue text-2xl mb-6 font-geist-sans">Famous Segments</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* Segment 1 - Left */}
-                    <div className="group relative">
-                      <div className="flex items-center">
-                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
-                          <Image
-                            src="/bustehradberg.png"
-                            alt="Bustehradberg segment"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <span className="text-lg font-medium tracking-wide text-gray-800">Bustehradberg</span>
-                      </div>
-                      {/* Hover Image */}
-                      <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                        <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-[435px] h-[272px]">
-                            <Image
-                              src="/bustehradberg.png"
-                              alt="Bustehradberg segment"
-                              fill
-                              className="object-cover rounded"
-                            />
-                          </div>
-                            <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 420m | Grade: 6%</p>
-                        </div>
-                      </div>
+                {/* Segment 2 - Right */}
+                <div className="group relative">
+                  <div className="flex items-center justify-end md:justify-start">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                      <Image
+                        src="/oude-wittemont.png"
+                        alt="Oude Wittemont segment"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    
-                    {/* Segment 2 - Right */}
-                    <div className="group relative">
-                      <div className="flex items-center justify-end md:justify-start">
-                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
-                          <Image
-                            src="/oude-wittemont.png"
-                            alt="Oude Wittemont segment"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <span className="text-lg font-medium tracking-wide text-gray-800">Oude Wittemont</span>
+                    <span className="text-lg font-medium tracking-wide text-gray-800">Oude Wittemont</span>
+                  </div>
+                  {/* Hover Image */}
+                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-white p-2 rounded-lg shadow-lg">
+                      <div className="relative w-[435px] h-[272px]">
+                        <Image
+                          src="/oude-wittemont.png"
+                          alt="Oude Wittemont segment"
+                          fill
+                          className="object-cover rounded"
+                        />
                       </div>
-                      {/* Hover Image */}
-                      <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                        <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-[435px] h-[272px]">
-                            <Image
-                              src="/oude-wittemont.png"
-                              alt="Oude Wittemont segment"
-                              fill
-                              className="object-cover rounded"
-                            />
-                          </div>
-                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 1080m | Grade: 4,2%</p>
-                        </div>
-                      </div>
+                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 1080m | Grade: 4,2%</p>
                     </div>
-                    
-                    {/* Segment 3 - Left */}
-                    <div className="group relative">
-                      <div className="flex items-center">
-                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
-                          <Image
-                            src="/lumiirstraat.png"
-                            alt="Lumiirstraat segment"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <span className="text-lg font-medium tracking-wide text-gray-800">Lumiirstraat</span>
-                      </div>
-                      {/* Hover Image */}
-                      <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                        <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-[435px] h-[272px]">
-                            <Image
-                              src="/lumiirstraat.png"
-                              alt="Lumiirstraat segment"
-                              fill
-                              className="object-cover rounded"
-                            />
-                          </div>
-                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 375m | Grade: 10%</p>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+                
+                {/* Segment 3 - Left */}
+                <div className="group relative">
+                  <div className="flex items-center">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                      <Image
+                        src="/lumiirstraat.png"
+                        alt="Lumiirstraat segment"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    
-                    {/* Segment 4 - Right */}
-                    <div className="group relative">
-                      <div className="flex items-center justify-end md:justify-start">
-                        <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
-                          <Image
-                            src="/praagse-burchberg.png"
-                            alt="Praagse Burchberg segment"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <span className="text-lg font-medium tracking-wide text-gray-800">Praagse Burchtberg</span>
+                    <span className="text-lg font-medium tracking-wide text-gray-800">Lumiirstraat</span>
+                  </div>
+                  {/* Hover Image */}
+                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-white p-2 rounded-lg shadow-lg">
+                      <div className="relative w-[435px] h-[272px]">
+                        <Image
+                          src="/lumiirstraat.png"
+                          alt="Lumiirstraat segment"
+                          fill
+                          className="object-cover rounded"
+                        />
                       </div>
-                      {/* Hover Image */}
-                      <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                        <div className="bg-white p-2 rounded-lg shadow-lg">
-                          <div className="relative w-[435px] h-[272px]">
-                            <Image
-                              src="/praagse-burchberg.png"
-                              alt="Praagse Burchberg segment"
-                              fill
-                              className="object-cover rounded"
-                            />
-                          </div>
-                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 990m | Grade: 7,8%</p>
-                        </div>
+                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 375m | Grade: 10%</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Segment 4 - Right */}
+                <div className="group relative">
+                  <div className="flex items-center justify-end md:justify-start">
+                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-3 border border-olive-500">
+                      <Image
+                        src="/praagse-burchberg.png"
+                        alt="Praagse Burchberg segment"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="text-lg font-medium tracking-wide text-gray-800">Praagse Burchtberg</span>
+                  </div>
+                  {/* Hover Image */}
+                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-white p-2 rounded-lg shadow-lg">
+                      <div className="relative w-[435px] h-[272px]">
+                        <Image
+                          src="/praagse-burchberg.png"
+                          alt="Praagse Burchberg segment"
+                          fill
+                          className="object-cover rounded"
+                        />
                       </div>
+                      <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 990m | Grade: 7,8%</p>
                     </div>
                   </div>
                 </div>
