@@ -395,7 +395,7 @@ export default function Home() {
                       alt="Cyclists racing on cobblestones"
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 66vw"
+                      sizes="(max-width: 768px) 50vw, 66vw"
                     />
                   </div>
                 </div>
