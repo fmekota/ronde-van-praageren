@@ -376,60 +376,60 @@ export default function Home() {
         </section>
 
         {/* Hot News Section - Press Releases */}
-        <section id="hot-news" className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-dark-blue">Hot News</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Latest updates and press releases from Ronde van Praageren
-            </p>
-          </div>
-          
-          <div className="max-w-5xl mx-auto">
-            {/* News Item */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
-              <div className="md:flex">
-                <div className="md:w-2/3 relative">
-                  <div className="h-64 md:h-full relative">
+        <section id="hot-news" className="mb-24 py-16 bg-gray-50 -mx-4 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-dark-blue">Hot News</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Latest updates and press releases from Ronde van Praageren
+              </p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto">
+              {/* News Item */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
+                <div className="md:flex md:h-[600px]">
+                  <div className="md:w-2/3 relative h-96 md:h-full">
                     <Image
                       src="/hudy-press-release.png"
                       alt="Cyclists racing on cobblestones"
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 50vw, 66vw"
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 66vw"
                     />
                   </div>
-                </div>
-                <div className="md:w-1/3 p-8">
-                  <div className="uppercase tracking-wide text-sm text-accent font-semibold mb-1">Press Release</div>
-                  <h3 className="text-2xl font-bold text-dark-blue mb-2">Tadej Pogačar mění jarní program, Honza Hudeček vynechá Ronde van Praageren a míří na Bikemaraton Beroun COFIDIS</h3>
-                  <p className="text-gray-600 mb-4">March 28, 2025</p>
-                  <div className="text-gray-700 leading-relaxed">
-                    <p className="mb-4">
-                    Tým UAE Team Emirates oznamuje úpravu závodního programu svých jezdců před klíčovými jarními závody
-                    </p>
-                    <p className="mb-4">
-                    Tadej Pogačar se nezúčastní závodů E3 Saxo Classic a Gent-Wevelgem, aby mohl naplno doladit formu na hlavní cíle jara – Kolem Flander (Ronde van Vlaanderen) a Paříž–Roubaix.
-                    </p>
-                    <p className="mb-4">
-                    &ldquo;S ohledem na náročnost nadcházejících klasik jsme se rozhodli Tadejovi upravit závodní plán. Pauza mu umožní doladit přípravu a přijet do Flander i Roubaix ve špičkové formě&rdquo; uvedl sportovní ředitel Mauro Gianetti.
-                    </p>
-                    <p>
-                    Honza Hudeček, který měl od začátku sezóny zaměřeno výhradně na Ronde van Vlaanderen, neměl závody E3 ani Gent-Wevelgem ve svém plánu. Původně plánovaná účast na Ronde van Praageren však nebude možná z organizačních důvodů. Následně Honza přesune pozornost na domácí závod Bikemaraton Beroun COFIDIS.
-                    </p>
-                    <p className="mb-4">
-                    &ldquo;Mrzí mě, že se letos nepostavím na start Ronde van Praageren, ale mou prioritou zůstávají Flandry, kde mířím na umístění v top 10. Poté se těším na Bikemaraton Beroun COFIDIS, kde chci přenést formu z klasik na domácí tratě. A Filipovi Mekotovi přeju, ať to v Praagerenu klapne a přiveze vítězství!&rdquo; uvedl Honza Hudeček.
-                    </p>
-                    <p>
-                    Oba jezdci nyní absolvují tréninkové soustředění zaměřené na závodní simulace a technickou přípravu, především s důrazem na pavé sektory a ostrý závodní rytmus.
-                    </p>
-                  </div>
-                  <div className="mt-6">
-                    <a href="#" className="inline-flex items-center text-primary font-semibold hover:text-primary-hover">
-                      Read more 
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
+                  <div className="md:w-1/3 p-8 md:overflow-y-auto">
+                    <div className="uppercase tracking-wide text-sm text-accent font-semibold mb-1">Press Release</div>
+                    <h3 className="text-2xl font-bold text-dark-blue mb-2">Tadej Pogačar mění jarní program, Honza Hudeček vynechá Ronde van Praageren a míří na Bikemaraton Beroun COFIDIS</h3>
+                    <p className="text-gray-600 mb-4">March 28, 2025</p>
+                    <div className="text-gray-700 leading-relaxed">
+                      <p className="mb-4">
+                      Tým UAE Team Emirates oznamuje úpravu závodního programu svých jezdců před klíčovými jarními závody
+                      </p>
+                      <p className="mb-4">
+                      Tadej Pogačar se nezúčastní závodů E3 Saxo Classic a Gent-Wevelgem, aby mohl naplno doladit formu na hlavní cíle jara – Kolem Flander (Ronde van Vlaanderen) a Paříž–Roubaix.
+                      </p>
+                      <p className="mb-4">
+                      &ldquo;S ohledem na náročnost nadcházejících klasik jsme se rozhodli Tadejovi upravit závodní plán. Pauza mu umožní doladit přípravu a přijet do Flander i Roubaix ve špičkové formě&rdquo; uvedl sportovní ředitel Mauro Gianetti.
+                      </p>
+                      <p>
+                      Honza Hudeček, který měl od začátku sezóny zaměřeno výhradně na Ronde van Vlaanderen, neměl závody E3 ani Gent-Wevelgem ve svém plánu. Původně plánovaná účast na Ronde van Praageren však nebude možná z organizačních důvodů. Následně Honza přesune pozornost na domácí závod Bikemaraton Beroun COFIDIS.
+                      </p>
+                      <p className="mb-4">
+                      &ldquo;Mrzí mě, že se letos nepostavím na start Ronde van Praageren, ale mou prioritou zůstávají Flandry, kde mířím na umístění v top 10. Poté se těším na Bikemaraton Beroun COFIDIS, kde chci přenést formu z klasik na domácí tratě. A Filipovi Mekotovi přeju, ať to v Praagerenu klapne a přiveze vítězství!&rdquo; uvedl Honza Hudeček.
+                      </p>
+                      <p>
+                      Oba jezdci nyní absolvují tréninkové soustředění zaměřené na závodní simulace a technickou přípravu, především s důrazem na pavé sektory a ostrý závodní rytmus.
+                      </p>
+                    </div>
+                    <div className="mt-6">
+                      <a href="#" className="inline-flex items-center text-primary font-semibold hover:text-primary-hover">
+                        Read more 
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
