@@ -391,7 +391,7 @@ export default function Home() {
                 <div className="md:w-1/3 relative">
                   <div className="h-64 md:h-full relative">
                     <Image
-                      src="/race_action.jpg"
+                      src="/hudy-press-release.png"
                       alt="Cyclists racing on cobblestones"
                       fill
                       className="object-cover"
