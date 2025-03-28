@@ -244,7 +244,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-2xl font-bold mb-6 text-olive-500">FOLLOW THE RACE</h3>
                   <p className="text-lg text-gray-700 mb-8">
-                    Study the terrain, even as you train. Prepare for the cobbles of Prague.
+                    Study the terrain, even as you train. Prepare for the cobbles of Prague
                   </p>
                 </div>
                 
@@ -307,7 +307,7 @@ export default function Home() {
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Terrain Type</h3>
-                <p className="text-gray-700">Road, "Some" COBBLES</p>
+                <p className="text-gray-700">Road, &ldquo;Some&rdquo; COBBLES</p>
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Difficulty</h3>
