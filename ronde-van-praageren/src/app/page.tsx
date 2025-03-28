@@ -306,7 +306,7 @@ export default function Home() {
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Terrain Type</h3>
-                <p className="text-gray-700">Road, Some Gravel Sections</p>
+                <p className="text-gray-700">Road, "Some" COBBLES</p>
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-primary mb-2">Difficulty</h3>
@@ -324,16 +324,6 @@ export default function Home() {
               Plan your day with our detailed race schedule
             </p>
           </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <div className="timeline-item">
-              <div className="timeline-marker">1</div>
-              <div>
-                <h3 className="text-xl font-bold text-dark-blue">Registration & Check-in</h3>
-                <p className="text-gray-600">8:00 AM - 9:30 AM</p>
-                <p className="text-gray-700 mt-1">Arrive early to complete your registration and collect your race number and timing chip.</p>
-              </div>
-            </div>
             
             <div className="timeline-item">
               <div className="timeline-marker">2</div>
@@ -357,7 +347,7 @@ export default function Home() {
               <div className="timeline-marker">4</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">First Riders Finish</h3>
-                <p className="text-gray-600">Approximately 13:30 PM</p>
+                <p className="text-gray-600">Approximately 3:30 PM</p>
                 <p className="text-gray-700 mt-1">Elite riders are expected to complete the course in around 3.5 hours.</p>
               </div>
             </div>
@@ -366,7 +356,7 @@ export default function Home() {
               <div className="timeline-marker">5</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Awards Ceremony</h3>
-                <p className="text-gray-600">3:00 PM</p>
+                <p className="text-gray-600">5:00 PM</p>
                 <p className="text-gray-700 mt-1">Celebration and recognition of top finishers in various categories.</p>
               </div>
             </div>
