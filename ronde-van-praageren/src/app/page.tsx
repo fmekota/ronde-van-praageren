@@ -77,6 +77,16 @@ export default function Home() {
               </svg>
               Download Brochure
             </a>
+            <a 
+              href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+              className="bg-yellow-accent hover:bg-yellow-500 text-brown-800 py-3 px-8 border-2 border-yellow-accent rounded-md transition duration-300 flex items-center justify-center gap-2"
+              download
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Director&apos;s Word
+            </a>
           </div>
         </div>
       </section>
@@ -148,7 +158,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-dark-blue">From the Race Director</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A message about the spirit of Ronde van Praagerenk
+              The spirit of Ronde van Praageren from our Race Director
             </p>
           </div>
           
@@ -167,9 +177,9 @@ export default function Home() {
             
             <div className="w-full md:w-2/3">
               <blockquote className="text-gray-700 text-lg leading-relaxed mb-6">
-                &quot;Když se řekne cyklistika, vybaví se většině lidí jen jedno slovo: “pavé”. Co se ale skrývá v srdci tohoto pojmu a je skutečně padnoucí pro region střední Evropy? Již 5 let nacházíme opakovaně jak ve svých srdcích, tak v dlážděných ulicích v okolí Prahy, odpověď na tuto otázku ve znění: “ne”. Praze, jako odvěké součásti regionu Západních Flander, totiž mnohem vice sluší vlámština a s tím spojené náležité označení segmentů. Přitom dnes snad není pražského cyklisty, který by neměl povědomí o věhlasu Uibergu, Oude Wittemontu, Praagse Burchbergu nebo Muur Van Wijngaarden. Den plný kostek, prudkých stoupání, nesmyslného závodění, gastronomie, soudržnosti a svornosti, máte možnost zažít právě teď na Ronde Van Praageren. Přidej se k nám na nezapomenutelnou jízdu po stopách opravdové cyklistiky!.&quot;
+                &quot;Když se řekne cyklistika, vybaví se většině lidí jen jedno slovo: "pavé". Co se ale skrývá v srdci tohoto pojmu a je skutečně padnoucí pro region střední Evropy? Již 5 let nacházíme opakovaně jak ve svých srdcích, tak v dlážděných ulicích v okolí Prahy, odpověď na tuto otázku ve znění: "ne". Praze, jako odvěké součásti regionu Západních Flander, totiž mnohem vice sluší vlámština a s tím spojené náležité označení segmentů. Přitom dnes snad není pražského cyklisty, který by neměl povědomí o věhlasu Uibergu, Oude Wittemontu, Praagse Burchbergu nebo Muur Van Wijngaarden. Den plný kostek, prudkých stoupání, nesmyslného závodění, gastronomie, soudržnosti a svornosti, máte možnost zažít právě teď na Ronde Van Praageren. Přidej se k nám na nezapomenutelnou jízdu po stopách opravdové cyklistiky!.&quot;
                 <br /><br />
-                &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. = tady to bude anglicky?&quot;
+                &quot;When we say cycling, most people think of one word: 'pavé'. But what lies at the heart of this concept and is it truly fitting for the Central European region? For 5 years now, we have repeatedly found, both in our hearts and in the cobbled streets around Prague, the answer to this question: 'no'. Prague, as an eternal part of the Western Flanders region, is much better suited to Flemish and the associated proper designation of segments. Today, there is hardly a Prague cyclist who would not be aware of the fame of Uiberg, Oude Wittemont, Praagse Burchberg or Muur Van Wijngaarden. A day full of cobblestones, steep climbs, senseless racing, gastronomy, cohesion and harmony - you have the opportunity to experience it right now at Ronde Van Praageren. Join us for an unforgettable ride following the footsteps of real cycling!&quot;
               </blockquote>
               <div className="flex items-center">
                 <div>
@@ -333,58 +343,53 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Gold tier sponsors */}
+          {/* Main sponsors - Only showing three key sponsors */}
           <div className="mb-12">
-            <h3 className="text-xl font-bold text-center text-primary mb-8">Gold Sponsors</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              <div className="p-4 bg-white shadow-md rounded-lg flex items-center justify-center h-32">
-                <div className="text-xl font-bold text-gray-400">Sponsor Logo 1</div>
+            <h3 className="text-xl font-bold text-center text-primary mb-8">Main Sponsors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
+              <div className="p-6 bg-white shadow-md rounded-lg flex items-center justify-center h-40 hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-24">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-16 h-16 text-dark-blue">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-dark-blue absolute bottom-4">CC Currywurst</h4>
               </div>
-              <div className="p-4 bg-white shadow-md rounded-lg flex items-center justify-center h-32">
-                <div className="text-xl font-bold text-gray-400">Sponsor Logo 2</div>
+              
+              <div className="p-6 bg-white shadow-md rounded-lg flex items-center justify-center h-40 hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-24">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-16 h-16 text-accent">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
+                    </svg>
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-accent absolute bottom-4">Prague Cycling</h4>
               </div>
-              <div className="p-4 bg-white shadow-md rounded-lg flex items-center justify-center h-32">
-                <div className="text-xl font-bold text-gray-400">Sponsor Logo 3</div>
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg flex items-center justify-center h-32">
-                <div className="text-xl font-bold text-gray-400">Sponsor Logo 4</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Silver tier sponsors */}
-          <div>
-            <h3 className="text-xl font-bold text-center text-accent mb-8">Silver Sponsors</h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 5</div>
-              </div>
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 6</div>
-              </div>
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 7</div>
-              </div>
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 8</div>
-              </div>
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 9</div>
-              </div>
-              <div className="p-3 bg-white shadow-md rounded-lg flex items-center justify-center h-20">
-                <div className="text-sm font-bold text-gray-400">Sponsor 10</div>
+              
+              <div className="p-6 bg-white shadow-md rounded-lg flex items-center justify-center h-40 hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-24">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-16 h-16 text-yellow-accent">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                    </svg>
+                  </div>
+                </div>
+                <h4 className="text-lg font-bold text-yellow-accent absolute bottom-4">Czech Cobbles Ltd</h4>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials Section - New section */}
+        {/* Testimonials Section - Updated with more authentic Czech cyclist testimonials */}
         <section className="mb-24 py-16 bg-gray-100 -mx-4 px-4">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-dark-blue">Rider Testimonials</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Hear from cyclists who participated in previous editions
+                Hear from cyclists who experienced the cobbles of Ronde van Praageren
               </p>
             </div>
             
@@ -398,13 +403,23 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;Nemůžu. A nechci to jet, jděte do prdele s nějakejma kostkama.&rdquo;
+                    &ldquo;Muur Van Wijngaarden mě kompletně zničil, ale výhled z vrcholu na pražské panorama to stál za to. Kostky, pivko a parádní atmosféra - lepší závod v Praze nenajdete!&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src="/cobblestone-cyclist.jpg"
+                          alt="Martin Novák"
+                          fill
+                          className="object-cover object-top"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Veronika Přikrylová</h4>
-                      <p className="text-gray-600">0 time participant</p>
+                      <h4 className="font-bold text-dark-blue">Martin Novák</h4>
+                      <p className="text-gray-600">2024 Participant</p>
                     </div>
                   </div>
                 </div>
@@ -419,13 +434,23 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;Budete to mít hezký. :) climbs.&rdquo;
+                    &ldquo;Praagse Burchberg je legendární stoupání, kde člověk pochopí, co znamená opravdová cyklistika. Každý rok se vracím na Ronde van Praageren, protože nikde jinde nezažiju tak autentickou atmosféru vlámských klasik přímo v srdci Prahy.&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src="/cobblestone-cyclists.jpg"
+                          alt="Klara Svobodová"
+                          fill
+                          className="object-cover object-center"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Martin Práger</h4>
-                      <p className="text-gray-600">0-Time Participant</p>
+                      <h4 className="font-bold text-dark-blue">Klara Svobodová</h4>
+                      <p className="text-gray-600">3-Time Participant</p>
                     </div>
                   </div>
                 </div>
@@ -440,13 +465,23 @@ export default function Home() {
                 </div>
                 <div className="pt-4">
                   <p className="text-gray-700 italic mb-6">
-                    &ldquo;Mam to každej rok jako vrchol sezony. Jediná věc, co mě děsí, je Jankův nástup.&rdquo;
+                    &ldquo;Uiberg a Oude Wittemont jsou nejenom skvělé segmenty, ale především zážitky na celý život. Organizace je perfektní, občerstvení na trase vynikající a after-party u Currywurstu je legendární! Ronde van Praageren je víc než závod - je to festival cyklistiky.&rdquo;
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src="/cobblestone-cyclist.png"
+                          alt="Tomáš Dvořák"
+                          fill
+                          className="object-cover object-center"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <h4 className="font-bold text-dark-blue">Filip Měkota</h4>
-                      <p className="text-gray-600">2023 &amp; 2023 Winner</p>
+                      <h4 className="font-bold text-dark-blue">Tomáš Dvořák</h4>
+                      <p className="text-gray-600">2023 &amp; 2024 Participant</p>
                     </div>
                   </div>
                 </div>
@@ -464,28 +499,30 @@ export default function Home() {
                 <h2 className="text-5xl md:text-6xl font-bold mb-8 text-olive-500 uppercase tracking-wide leading-tight">
                   FOLLOW<br />THE RACE
                 </h2>
-                <p className="text-xl text-gray-700 mb-12">
-                  Study the terrain, even as you train.
+                <p className="text-xl text-gray-700 mb-8">
+                  Study the terrain, even as you train. Prepare for the cobbles of Prague.
                 </p>
                 
                 <div className="bg-white p-8 rounded-lg shadow-lg relative">
                   <div className="flex flex-col">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto relative">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto relative border-2 border-olive-500">
                       <Image 
-                        src="/race-director.jpg" 
-                        alt="Race Director" 
-                        className="object-cover"
-                        fill 
+                        src="/race_director.png" 
+                        alt="Race Director"
+                        fill
+                        className="object-cover object-center"
                         sizes="(max-width: 768px) 100vw, 128px"
                       />
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-center">Race Director Message</h3>
-                    <p className="text-center text-gray-500 mb-8">TBD</p>
+                    <p className="text-center text-gray-500 mb-6">A day full of cobblestones, steep climbs, and senseless racing</p>
                     <div className="text-center">
-                      <a href="#" className="inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                      <a 
+                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+                        className="inline-block py-3 px-6 bg-olive-600 text-white font-bold rounded hover:bg-olive-700 transition duration-300"
+                        download
+                      >
+                        Download Full Message
                       </a>
                     </div>
                   </div>
@@ -504,6 +541,15 @@ export default function Home() {
                     data-from-embed="false"
                   ></div>
                 </div>
+                <div className="mt-4 p-4 bg-yellow-accent/10 rounded-md">
+                  <h3 className="font-bold text-dark-blue mb-2">Famous Segments</h3>
+                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Uiberg</li>
+                    <li>Oude Wittemont</li>
+                    <li>Praagse Burchberg</li>
+                    <li>Muur Van Wijngaarden</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -518,16 +564,23 @@ export default function Home() {
           </div>
           <div className="container mx-auto relative">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for the Challenge?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for the Cobblestone Challenge?</h2>
               <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                Join hundreds of cyclists in Prague&apos;s most exciting race event
+                Join hundreds of cyclists in Prague&apos;s most authentic Flemish-style race
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                 <a href="#route" className="btn-primary py-4 px-8 text-lg rounded-md">
                   Explore the Route
                 </a>
-                <a href="#" className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300">
-                  Sign up for Updates
+                <a 
+                  href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+                  className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300 flex items-center gap-2"
+                  download
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Read Director&apos;s Word
                 </a>
               </div>
               <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
