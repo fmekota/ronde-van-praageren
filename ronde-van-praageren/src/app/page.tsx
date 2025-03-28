@@ -247,16 +247,30 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9">
-                {/* Strava embed code */}
-                <div 
-                  className="strava-embed-placeholder" 
-                  data-embed-type="route" 
-                  data-embed-id="3199162964264401098" 
-                  data-style="standard" 
-                  data-from-embed="false"
-                ></div>
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="md:w-2/3">
+                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+                  <div className="aspect-w-16 aspect-h-9">
+                    {/* Strava embed code */}
+                    <div 
+                      className="strava-embed-placeholder" 
+                      data-embed-type="route" 
+                      data-embed-id="3199162964264401098" 
+                      data-style="standard" 
+                      data-from-embed="false"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="md:w-1/3 p-4 bg-yellow-accent/10 rounded-md flex flex-col justify-center">
+                <h3 className="font-bold text-dark-blue mb-4">Famous Segments</h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>Uiberg</li>
+                  <li>Oude Wittemont</li>
+                  <li>Praagse Burchberg</li>
+                  <li>Muur Van Wijngaarden</li>
+                </ul>
               </div>
             </div>
 
@@ -342,6 +356,105 @@ export default function Home() {
               We&apos;re grateful to our amazing sponsors who make this event possible
             </p>
           </div>
+          
+          {/* Main sponsors */}
+          <div className="mb-12">
+            <h3 className="text-xl font-bold text-center text-primary mb-8">Main Sponsors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
+              <div className="p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
+                <div className="relative w-48 h-48 mb-6">
+                  <Image
+                    src="/sponsors/ccc.png"
+                    alt="CC Currywurst Logo"
+                    width={200}
+                    height={200}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-dark-blue mb-2">CC Currywurst</h4>
+                <p className="text-gray-600 text-center">Organizing club and main supporter, providing event logistics and community engagement since 2020.</p>
+              </div>
+              
+              <div className="p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
+                <div className="relative w-48 h-48 mb-6">
+                  <Image
+                    src="/sponsors/uci.png"
+                    alt="UCI Logo"
+                    width={200}
+                    height={200}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-accent mb-2">Pražská Cyklistická</h4>
+                <p className="text-gray-600 text-center">Supporting local cycling infrastructure and development of cycling culture in Prague.</p>
+              </div>
+              
+              <div className="p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
+                <div className="relative w-48 h-48 mb-6">
+                  <Image
+                    src="/sponsors/mapei.png"
+                    alt="MAPEI Logo"
+                    width={200}
+                    height={200}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-yellow-accent mb-2">Mapei</h4>
+                <p className="text-gray-600 text-center">Co to bylo mapei? Esence toho že silnička by měla být italská!</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Sponsor Notes */}
+          <div className="mt-16">
+            <h3 className="text-xl font-bold text-center text-dark-blue mb-8">Sponsor Notes</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-primary transition-colors">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold text-lg">Sponsor Note 1</h4>
+                </div>
+                <p className="text-gray-600">
+                  "We're proud to support the Ronde van Praageren and its celebration of cycling culture in Prague. The event captures the essence of Flemish classics right in the heart of Central Europe."
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-accent transition-colors">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold text-lg">Sponsor Note 2</h4>
+                </div>
+                <p className="text-gray-600">
+                  "The challenge of the cobbles, the spirit of the riders, and the passion of the crowd make Ronde van Praageren a unique event that we're honored to be a part of. Looking forward to the 2025 edition!"
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-yellow-accent transition-colors">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-yellow-accent/10 rounded-full flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold text-lg">Sponsor Note 3</h4>
+                </div>
+                <p className="text-gray-600">
+                  "As cycling enthusiasts ourselves, we understand the dedication it takes to conquer routes like the Praagse Burchberg and Muur Van Wijngaarden. We're excited to help bring this amazing event to life."
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Testimonials Section - Updated with more authentic Czech cyclist testimonials */}
@@ -370,7 +483,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
                       <div className="relative w-full h-full">
                         <Image 
-                          src="/verca.jpg"
+                          src="/verca.png"
                           alt="Veronika Přikrylová, femme fatale pražské cyklistické komunity"
                           fill
                           className="object-cover object-top"
@@ -401,7 +514,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
                       <div className="relative w-full h-full">
                         <Image 
-                          src="/vakoc.jpg"
+                          src="/vakoc.png"
                           alt="Petr Vakoč"
                           fill
                           className="object-cover object-center"
@@ -523,24 +636,29 @@ export default function Home() {
               
               {/* Right Column - Map */}
               <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-w-16 aspect-h-9">
-                  {/* Strava embed code for the race route */}
-                  <div 
-                    className="strava-embed-placeholder" 
-                    data-embed-type="route" 
-                    data-embed-id="3199162964264401098" 
-                    data-style="standard" 
-                    data-from-embed="false"
-                  ></div>
-                </div>
-                <div className="mt-4 p-4 bg-yellow-accent/10 rounded-md">
-                  <h3 className="font-bold text-dark-blue mb-2">Famous Segments</h3>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Uiberg</li>
-                    <li>Oude Wittemont</li>
-                    <li>Praagse Burchberg</li>
-                    <li>Muur Van Wijngaarden</li>
-                  </ul>
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="md:w-2/3">
+                    <div className="aspect-w-16 aspect-h-9">
+                      {/* Strava embed code for the race route */}
+                      <div 
+                        className="strava-embed-placeholder" 
+                        data-embed-type="route" 
+                        data-embed-id="3199162964264401098" 
+                        data-style="standard" 
+                        data-from-embed="false"
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <div className="md:w-1/3 p-4 bg-yellow-accent/10 rounded-md flex flex-col justify-center">
+                    <h3 className="font-bold text-dark-blue mb-4">Famous Segments</h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                      <li>Uiberg</li>
+                      <li>Oude Wittemont</li>
+                      <li>Praagse Burchberg</li>
+                      <li>Muur Van Wijngaarden</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
