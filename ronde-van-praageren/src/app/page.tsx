@@ -71,7 +71,7 @@ export default function Home() {
               Register Now
             </a>
             <a 
-              href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+              href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
               className="bg-yellow-accent hover:bg-yellow-500 text-brown-800 py-3 px-8 border-2 border-yellow-accent rounded-md transition duration-300 flex items-center justify-center gap-2"
               download
             >
@@ -260,7 +260,7 @@ export default function Home() {
                     <p className="text-center text-gray-500 mb-6">A day full of cobblestones, steep climbs, and senseless racing</p>
                     <div className="text-center">
                       <a 
-                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
                         className="inline-block py-3 px-6 bg-olive-600 text-white font-bold rounded hover:bg-olive-700 transition duration-300"
                         download
                       >
@@ -882,7 +882,7 @@ export default function Home() {
                   Register Now
                 </a>
                 <a 
-                  href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.docx" 
+                  href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
                   className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300 flex items-center gap-2"
                   download
                 >
