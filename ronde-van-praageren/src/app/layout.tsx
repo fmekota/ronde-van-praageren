@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ronde van Praageren | Cycling Race",
   description: "Join us for the exciting Ronde van Praageren cycling race. Register now!",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
