@@ -209,7 +209,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-dark-blue">Date & Time</h3>
               <p className="text-gray-700 mb-2 text-lg">March 29, 2025</p>
-              <p className="text-gray-700 text-lg">Starting at 9:00 AM</p>
+              <p className="text-gray-700 text-lg">Starting at 10:00 AM</p>
             </div>
             
             <div className="card-custom bg-white p-8 text-center">
@@ -232,7 +232,6 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-dark-blue">Distance</h3>
               <p className="text-gray-700 mb-2 text-lg">110km Main Race</p>
-              <p className="text-gray-700 text-lg">45km Leisure Ride</p>
             </div>
           </div>
         </section>
@@ -305,7 +304,7 @@ export default function Home() {
               <div className="timeline-marker">1</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Registration & Check-in</h3>
-                <p className="text-gray-600">7:00 AM - 8:30 AM</p>
+                <p className="text-gray-600">8:00 AM - 9:30 AM</p>
                 <p className="text-gray-700 mt-1">Arrive early to complete your registration and collect your race number and timing chip.</p>
               </div>
             </div>
@@ -314,7 +313,7 @@ export default function Home() {
               <div className="timeline-marker">2</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Rider Briefing</h3>
-                <p className="text-gray-600">8:30 AM - 8:45 AM</p>
+                <p className="text-gray-600">9:30 AM - 9:45 AM</p>
                 <p className="text-gray-700 mt-1">Important safety information and course details will be provided.</p>
               </div>
             </div>
@@ -323,8 +322,8 @@ export default function Home() {
               <div className="timeline-marker">3</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Race Start</h3>
-                <p className="text-gray-600">9:00 AM</p>
-                <p className="text-gray-700 mt-1">The 110km Main Race begins. Leisure ride starts 15 minutes later.</p>
+                <p className="text-gray-600">10:00 AM</p>
+                <p className="text-gray-700 mt-1">The 110km Main Race begins</p>
               </div>
             </div>
             
@@ -332,7 +331,7 @@ export default function Home() {
               <div className="timeline-marker">4</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">First Riders Finish</h3>
-                <p className="text-gray-600">Approximately 12:30 PM</p>
+                <p className="text-gray-600">Approximately 13:30 PM</p>
                 <p className="text-gray-700 mt-1">Elite riders are expected to complete the course in around 3.5 hours.</p>
               </div>
             </div>
@@ -387,8 +386,8 @@ export default function Home() {
                     priority
                   />
                 </div>
-                <h4 className="text-lg font-bold text-accent mb-2">Pražská Cyklistická</h4>
-                <p className="text-gray-600 text-center">Supporting local cycling infrastructure and development of cycling culture in Prague.</p>
+                <h4 className="text-lg font-bold text-accent mb-2">UCI</h4>
+                <p className="text-gray-600 text-center">Supporting local cycling infrastructure and development of cycling culture across the globe.</p>
               </div>
               
               <div className="p-6 bg-white shadow-md rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
@@ -702,7 +701,7 @@ export default function Home() {
                   </div>
                   <div className="text-left">
                     <p className="font-bold">Registration Closing Soon</p>
-                    <p className="text-gray-300">February 20, 2025</p>
+                    <p className="text-gray-300">March 28, 2025</p>
                   </div>
                 </div>
                 <div className="flex items-center">
