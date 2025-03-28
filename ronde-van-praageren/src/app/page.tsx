@@ -288,7 +288,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 p-6 bg-yellow-accent/10 rounded-md">
-              <h3 className="font-bold text-dark-blue text-3xl mb-8 font-geist-sans">Famous Segments</h3>
+              <h3 className="font-bold text-dark-blue text-3xl mb-8 font-geist-sans text-center">Famous Segments</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Segment 1 - Left */}
@@ -318,7 +318,6 @@ export default function Home() {
                           className="object-cover rounded"
                         />
                       </div>
-                        <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 420m | Grade: 6%</p>
                     </div>
                   </div>
                 </div>
@@ -860,6 +859,38 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Weather Forecast Section - Added after Rider Testimonials */}
+        <section className="mb-24 py-16 bg-gray-50 -mx-4 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-dark-blue">Weather Forecast</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Stay updated with the latest weather conditions for your race day
+              </p>
+            </div>
+            
+            <div className="flex justify-center">
+              <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                  width="850" 
+                  height="650" 
+                  src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=47.488&lon=14.458&detailLat=50.1&detailLon=14.467&detail=true&pressure=true&message=true" 
+                  frameBorder="0"
+                  title="Weather Forecast Map"
+                  className="w-full"
+                ></iframe>
+              </div>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Check the forecast regularly before the event for the most accurate weather predictions. 
+                Being prepared for the weather conditions will help you have the best racing experience.
+              </p>
             </div>
           </div>
         </section>
