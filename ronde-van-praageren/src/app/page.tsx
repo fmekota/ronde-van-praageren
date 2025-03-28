@@ -376,7 +376,7 @@ export default function Home() {
         </section>
 
         {/* Hot News Section - Press Releases */}
-        <section className="mb-24">
+        <section id="hot-news" className="mb-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-dark-blue">Hot News</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -388,18 +388,18 @@ export default function Home() {
             {/* News Item */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
               <div className="md:flex">
-                <div className="md:w-1/3 relative">
+                <div className="md:w-2/3 relative">
                   <div className="h-64 md:h-full relative">
                     <Image
                       src="/hudy-press-release.png"
                       alt="Cyclists racing on cobblestones"
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 66vw"
                     />
                   </div>
                 </div>
-                <div className="md:w-2/3 p-8">
+                <div className="md:w-1/3 p-8">
                   <div className="uppercase tracking-wide text-sm text-accent font-semibold mb-1">Press Release</div>
                   <h3 className="text-2xl font-bold text-dark-blue mb-2">Tadej Pogačar mění jarní program, Honza Hudeček vynechá Ronde van Praageren a míří na Bikemaraton Beroun COFIDIS</h3>
                   <p className="text-gray-600 mb-4">March 28, 2025</p>
