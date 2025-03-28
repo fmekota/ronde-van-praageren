@@ -324,9 +324,10 @@ export default function Home() {
               Plan your day with our detailed race schedule
             </p>
           </div>
+          <div>
             
             <div className="timeline-item">
-              <div className="timeline-marker">2</div>
+              <div className="timeline-marker">1</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Rider Briefing</h3>
                 <p className="text-gray-600">9:30 AM - 9:45 AM</p>
@@ -335,7 +336,7 @@ export default function Home() {
             </div>
             
             <div className="timeline-item">
-              <div className="timeline-marker">3</div>
+              <div className="timeline-marker">2</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Race Start</h3>
                 <p className="text-gray-600">10:00 AM</p>
@@ -344,11 +345,20 @@ export default function Home() {
             </div>
             
             <div className="timeline-item">
+              <div className="timeline-marker">3</div>
+              <div>
+                <h3 className="text-xl font-bold text-dark-blue">Coffee Break</h3>
+                <p className="text-gray-600">Approximately 12:00 AM</p>
+                <p className="text-gray-700 mt-1">Coffee, tea, and snacks will be available.</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
               <div className="timeline-marker">4</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">First Riders Finish</h3>
                 <p className="text-gray-600">Approximately 3:30 PM</p>
-                <p className="text-gray-700 mt-1">Elite riders are expected to complete the course in around 3.5 hours.</p>
+                <p className="text-gray-700 mt-1">Elite riders are expected to complete the course in around 5.5 hours.</p>
               </div>
             </div>
             
@@ -356,7 +366,7 @@ export default function Home() {
               <div className="timeline-marker">5</div>
               <div>
                 <h3 className="text-xl font-bold text-dark-blue">Awards Ceremony</h3>
-                <p className="text-gray-600">5:00 PM</p>
+                <p className="text-gray-600">TBD</p>
                 <p className="text-gray-700 mt-1">Celebration and recognition of top finishers in various categories.</p>
               </div>
             </div>
@@ -602,6 +612,68 @@ export default function Home() {
                     <div>
                       <h4 className="font-bold text-dark-blue">Jan Kraus</h4>
                       <p className="text-gray-600">Cyklistický dráhový internacionál</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 5 */}
+              <div className="bg-white p-8 rounded-lg shadow-lg relative">
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <p className="text-gray-700 italic mb-6">
+                    &ldquo;Budete to mít hezký :)&rdquo;
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src="/prager.png"
+                          alt="Martin Práger"
+                          fill
+                          className="object-cover object-center"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-dark-blue">Martin Práger</h4>
+                      <p className="text-gray-600">Marketingový experta cyklistický teoretik</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 6 */}
+              <div className="bg-white p-8 rounded-lg shadow-lg relative">
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <p className="text-gray-700 italic mb-6">
+                    &ldquo;Baf. Mám klobny, mám grilovací sýr, ale už jsem na budgetu. Mám vzít promítačku?&rdquo;
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src="/burjada.png"
+                          alt="Adam Burjan"
+                          fill
+                          className="object-cover object-center"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-dark-blue">Adam Burjan</h4>
+                      <p className="text-gray-600">Internacionální propagátor bikepackingu a bezpražcové železniční dopravy</p>
                     </div>
                   </div>
                 </div>
