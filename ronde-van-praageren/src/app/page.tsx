@@ -310,13 +310,13 @@ export default function Home() {
                         <div className="bg-white p-2 rounded-lg shadow-lg">
                           <div className="relative w-[435px] h-[272px]">
                             <Image
-                              src="/oude-wittemont.png"
-                              alt="Oude Wittemont segment"
+                              src="/bustehradberg.png"
+                              alt="Bustehradberg segment"
                               fill
                               className="object-cover rounded"
                             />
                           </div>
-                          <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 1080m | Grade: 4,2%</p>
+                            <p className="text-sm font-medium text-center mt-2 text-gray-700">Length: 420m | Grade: 6%</p>
                         </div>
                       </div>
                     </div>
@@ -390,7 +390,7 @@ export default function Home() {
                             className="object-cover"
                           />
                         </div>
-                        <span className="text-lg font-medium tracking-wide text-gray-800">Praagse Burchberg</span>
+                        <span className="text-lg font-medium tracking-wide text-gray-800">Praagse Burchtberg</span>
                       </div>
                       {/* Hover Image */}
                       <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
