@@ -45,6 +45,7 @@ export default function Home() {
               <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors">Event</a></li>
               <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors">Route</a></li>
               <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors">Schedule</a></li>
+              <li><a href="/archive" className="text-white hover:text-yellow-accent transition-colors">Archive</a></li>
               <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-white hover:text-yellow-accent transition-colors" target="_blank" rel="noopener noreferrer">Register</a></li>
             </ul>
           </nav>
@@ -58,8 +59,8 @@ export default function Home() {
             Are You<br />Cobbles Ready?
           </h2>
           <div className="mb-8">
-            <p className="text-xl md:text-2xl font-medium">5th Annual Prague Cobbled Classic</p>
-            <p className="text-xl md:text-2xl font-bold">March 29, 2025</p>
+            <p className="text-xl md:text-2xl font-medium">6th Annual Prague Cobbled Classic</p>
+            <p className="text-xl md:text-2xl font-bold">March 28, 2026</p>
           </div>
           <div className="mt-12 flex flex-col md:flex-row gap-4">
             <a 
@@ -104,7 +105,7 @@ export default function Home() {
               <p className="text-gray-700 mb-8">
                 Take a look at the history of<br />Ronde van Praageren
               </p>
-              <a href="#history" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
+              <a href="/archive" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
                 TAKE THE HISTORY PATH
               </a>
             </div>
@@ -202,7 +203,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-dark-blue">Date & Time</h3>
-              <p className="text-gray-700 mb-2 text-lg">March 29, 2025</p>
+              <p className="text-gray-700 mb-2 text-lg">March 28, 2026</p>
               <p className="text-gray-700 text-lg">Starting at 10:00 AM</p>
             </div>
             
@@ -573,7 +574,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-dark-blue">Rider Testimonials</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Hear from cyclists who experienced the cobbles of Ronde van Praageren
+                From previous editions: Hear from cyclists who experienced the cobbles of Ronde van Praageren
               </p>
             </div>
             
@@ -664,7 +665,7 @@ export default function Home() {
                   </div>
                   <div className="text-left">
                     <p className="font-bold">Registration Closing Soon</p>
-                    <p className="text-gray-300">March 28, 2025</p>
+                    <p className="text-gray-300">March 27, 2026</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -732,6 +733,7 @@ export default function Home() {
                 <li><a href="#event" className="text-gray-300 hover:text-yellow-accent">Event Details</a></li>
                 <li><a href="#route" className="text-gray-300 hover:text-yellow-accent">Race Route</a></li>
                 <li><a href="#schedule" className="text-gray-300 hover:text-yellow-accent">Schedule</a></li>
+                <li><a href="/archive" className="text-gray-300 hover:text-yellow-accent">Archive</a></li>
                 <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-gray-300 hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">Registration</a></li>
               </ul>
             </div>
@@ -756,7 +758,7 @@ export default function Home() {
           </div>
           
           <div className="mt-12 pt-8 border-t border-gray-700 text-center md:text-left md:flex md:justify-between md:items-center">
-            <p className="text-gray-400">© 2025 Ronde van Praageren. All rights reserved.</p>
+            <p className="text-gray-400">© 2026 Ronde van Praageren. All rights reserved.</p>
             <p className="text-gray-400 mt-2 md:mt-0">
               <a href="#" className="hover:text-yellow-accent">Privacy Policy</a> | 
               <a href="#" className="hover:text-yellow-accent ml-2">Terms of Service</a>

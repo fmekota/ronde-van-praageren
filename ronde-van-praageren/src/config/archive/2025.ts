@@ -1,13 +1,13 @@
-// Event configuration - centralized constants for Ronde van Praageren
+// Archived event configuration - Ronde van Praageren 2025
 
-export const EVENT_CONFIG = {
+export const EVENT_CONFIG_2025 = {
   // Event details
   name: "Ronde van Praageren",
-  tagline: "6th Annual Prague Cobbled Classic",
-  year: 2026,
-  date: "March 28, 2026",
+  tagline: "5th Annual Prague Cobbled Classic",
+  year: 2025,
+  date: "March 29, 2025",
   startTime: "10:00 AM",
-  registrationDeadline: "March 27, 2026",
+  registrationDeadline: "March 28, 2025",
 
   // Race details
   distance: "110km",
@@ -185,7 +185,7 @@ export const EVENT_CONFIG = {
       },
       {
         sponsor: "UCI",
-        note: "The challenge of the cobbles, the spirit of the riders, and the passion of the crowd make Ronde van Praageren a unique event that we're honored to be a part of. Looking forward to the 2026 edition!",
+        note: "The challenge of the cobbles, the spirit of the riders, and the passion of the crowd make Ronde van Praageren a unique event that we're honored to be a part of. Looking forward to the 2025 edition!",
         color: "accent",
       },
       {
@@ -197,7 +197,4 @@ export const EVENT_CONFIG = {
   },
 } as const;
 
-export type EventConfig = typeof EVENT_CONFIG;
-export type Segment = (typeof EVENT_CONFIG.segments)[number];
-export type Testimonial = (typeof EVENT_CONFIG.testimonials)[number];
-export type ScheduleItem = (typeof EVENT_CONFIG.schedule)[number];
+export type EventConfig2025 = typeof EVENT_CONFIG_2025;

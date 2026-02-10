@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rondevanpraageren.cz"),
-  title: "Ronde van Praageren | 5th Annual Prague Cobbled Classic",
+  title: "Ronde van Praageren | 6th Annual Prague Cobbled Classic",
   description:
-    "Join the 5th Annual Ronde van Praageren cycling race on March 29, 2025. Experience 110km of cobblestones, steep climbs, and Flemish-style racing through Prague.",
+    "Join the 6th Annual Ronde van Praageren cycling race on March 28, 2026. Experience 110km of cobblestones, steep climbs, and Flemish-style racing through Prague.",
   keywords: [
     "cycling race",
     "Prague",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Ronde van Praageren | 5th Annual Prague Cobbled Classic",
+    title: "Ronde van Praageren | 6th Annual Prague Cobbled Classic",
     description:
-      "Join the 5th Annual Ronde van Praageren cycling race on March 29, 2025. Experience 110km of cobblestones, steep climbs, and Flemish-style racing through Prague.",
+      "Join the 6th Annual Ronde van Praageren cycling race on March 28, 2026. Experience 110km of cobblestones, steep climbs, and Flemish-style racing through Prague.",
     url: "https://rondevanpraageren.cz",
     siteName: "Ronde van Praageren",
     locale: "cs_CZ",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ronde van Praageren | 5th Annual Prague Cobbled Classic",
+    title: "Ronde van Praageren | 6th Annual Prague Cobbled Classic",
     description:
-      "Join the 5th Annual Ronde van Praageren cycling race on March 29, 2025. Experience 110km of cobblestones and Flemish-style racing.",
+      "Join the 6th Annual Ronde van Praageren cycling race on March 28, 2026. Experience 110km of cobblestones and Flemish-style racing.",
     images: ["/cobblestone-cyclist.jpg"],
   },
   alternates: {
@@ -63,11 +63,11 @@ export const metadata: Metadata = {
 const eventJsonLd = {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  name: "Ronde van Praageren 2025",
+  name: "Ronde van Praageren 2026",
   description:
-    "5th Annual Prague Cobbled Classic - A 110km cycling race featuring cobblestones, steep climbs, and Flemish-style racing through Prague.",
-  startDate: "2025-03-29T10:00:00+01:00",
-  endDate: "2025-03-29T18:00:00+01:00",
+    "6th Annual Prague Cobbled Classic - A 110km cycling race featuring cobblestones, steep climbs, and Flemish-style racing through Prague.",
+  startDate: "2026-03-28T10:00:00+01:00",
+  endDate: "2026-03-28T18:00:00+01:00",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: {
@@ -94,7 +94,7 @@ const eventJsonLd = {
     "@type": "Offer",
     url: "https://www.strava.com/clubs/1048077/group_events/1899385",
     availability: "https://schema.org/InStock",
-    validFrom: "2025-01-01",
+    validFrom: "2026-01-01",
   },
   sport: "Cycling",
   maximumAttendeeCapacity: 800,
