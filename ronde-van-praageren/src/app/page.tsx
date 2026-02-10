@@ -1,24 +1,24 @@
 "use client";
 
-import React from 'react';
-import { useEffect } from "react";
+import React, { useState } from 'react';
 import Image from "next/image";
+import Script from "next/script";
+import { SegmentCard, TestimonialCard } from "@/components";
+import { EVENT_CONFIG } from "@/config/event";
 
 export default function Home() {
-  // Load Strava embed script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://strava-embeds.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  const [stravaError, setStravaError] = useState(false);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md"
+      >
+        Skip to main content
+      </a>
+
       {/* Header - Updated with gradient background and new design */}
       <header className="header-gradient text-white shadow-md">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
@@ -40,7 +40,7 @@ export default function Home() {
               <p className="text-xs text-gray-300">by CC Currywurst</p>
             </div>
           </div>
-          <nav>
+          <nav aria-label="Main navigation">
             <ul className="flex space-x-6">
               <li><a href="#event" className="text-white hover:text-yellow-accent transition-colors">Event</a></li>
               <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors">Route</a></li>
@@ -75,7 +75,7 @@ export default function Home() {
               className="bg-yellow-accent hover:bg-yellow-500 text-brown-800 py-3 px-8 border-2 border-yellow-accent rounded-md transition duration-300 flex items-center justify-center gap-2"
               download
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Director&apos;s Word
@@ -95,7 +95,7 @@ export default function Home() {
             {/* Card 1 - Ronde History */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="flex justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
                 </svg>
@@ -112,7 +112,7 @@ export default function Home() {
             {/* Card 2 - The Course */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="flex justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-17a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2z" />
                 </svg>
               </div>
@@ -128,7 +128,7 @@ export default function Home() {
             {/* Card 3 - Registration */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="flex justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 3v4a1 1 0 001 1h4" />
                 </svg>
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-12">
+      <main id="main-content" className="container mx-auto px-4 py-12">
         {/* Race Director Citation Section */}
         <section className="mb-24">
           <div className="text-center mb-12">
@@ -160,10 +160,11 @@ export default function Home() {
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/race_director.png"
-                  alt="Race Director"
+                  alt="Janek Pedersen Lžičař, Race Director of Ronde van Praageren"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -196,7 +197,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card-custom bg-white p-8 text-center">
               <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -207,7 +208,7 @@ export default function Home() {
             
             <div className="card-custom bg-white p-8 text-center">
               <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -219,7 +220,7 @@ export default function Home() {
             
             <div className="card-custom bg-white p-8 text-center">
               <div className="w-20 h-20 bg-yellow-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
@@ -248,12 +249,13 @@ export default function Home() {
                       Study the terrain, even as you train. Prepare for the cobbles of Prague
                     </p>
                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 mx-auto relative border-2 border-olive-500">
-                      <Image 
-                        src="/race_director.png" 
-                        alt="Race Director"
+                      <Image
+                        src="/race_director.png"
+                        alt="Janek Pedersen Lžičař, Race Director"
                         fill
                         className="object-cover object-center"
                         sizes="(max-width: 768px) 100vw, 128px"
+                        loading="lazy"
                       />
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-center">Race Director Message</h3>
@@ -275,13 +277,27 @@ export default function Home() {
                 <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden h-full">
                   <div className="h-full">
                     {/* Strava embed code */}
-                    <div 
-                      className="strava-embed-placeholder h-full" 
-                      data-embed-type="route" 
-                      data-embed-id="3199162964264401098" 
-                      data-style="standard" 
-                      data-from-embed="false"
-                    ></div>
+                    {stravaError ? (
+                      <div className="flex flex-col items-center justify-center h-full p-8 text-center">
+                        <p className="text-gray-600 mb-4">Unable to load route map.</p>
+                        <a
+                          href="https://www.strava.com/routes/3199162964264401098"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          View route on Strava
+                        </a>
+                      </div>
+                    ) : (
+                      <div
+                        className="strava-embed-placeholder h-full"
+                        data-embed-type="route"
+                        data-embed-id="3199162964264401098"
+                        data-style="standard"
+                        data-from-embed="false"
+                      ></div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -289,131 +305,18 @@ export default function Home() {
 
             <div className="mt-12 p-6 bg-yellow-accent/10 rounded-md">
               <h3 className="font-bold text-dark-blue text-3xl mb-8 font-geist-sans text-center">Famous Segments</h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Segment 1 - Left */}
-                <div className="group relative">
-                  <div className="flex items-center">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
-                      <Image
-                        src="/bustehradberg.png"
-                        alt="Bustehradberg segment"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Bustehradberg</span>
-                      <p className="text-base font-medium text-gray-600 mt-1">Length: 420m | Grade: 6%</p>
-                    </div>
-                  </div>
-                  {/* Hover Image */}
-                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-white p-2 rounded-lg shadow-lg">
-                      <div className="relative w-[435px] h-[272px]">
-                        <Image
-                          src="/bustehradberg.png"
-                          alt="Bustehradberg segment"
-                          fill
-                          className="object-cover rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Segment 2 - Right */}
-                <div className="group relative">
-                  <div className="flex items-center justify-end md:justify-start">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
-                      <Image
-                        src="/oude-wittemont.png"
-                        alt="Oude Wittemont segment"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Oude Wittemont</span>
-                      <p className="text-base font-medium text-gray-600 mt-1">Length: 1080m | Grade: 4,2%</p>
-                    </div>
-                  </div>
-                  {/* Hover Image */}
-                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-white p-2 rounded-lg shadow-lg">
-                      <div className="relative w-[435px] h-[272px]">
-                        <Image
-                          src="/oude-wittemont.png"
-                          alt="Oude Wittemont segment"
-                          fill
-                          className="object-cover rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Segment 3 - Left */}
-                <div className="group relative">
-                  <div className="flex items-center">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
-                      <Image
-                        src="/lumiirstraat.png"
-                        alt="Lumiirstraat segment"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Lumiirstraat</span>
-                      <p className="text-base font-medium text-gray-600 mt-1">Length: 375m | Grade: 10%</p>
-                    </div>
-                  </div>
-                  {/* Hover Image */}
-                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-white p-2 rounded-lg shadow-lg">
-                      <div className="relative w-[435px] h-[272px]">
-                        <Image
-                          src="/lumiirstraat.png"
-                          alt="Lumiirstraat segment"
-                          fill
-                          className="object-cover rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Segment 4 - Right */}
-                <div className="group relative">
-                  <div className="flex items-center justify-end md:justify-start">
-                    <div className="relative h-[67px] w-[67px] rounded-md overflow-hidden mr-4 border border-olive-500">
-                      <Image
-                        src="/praagse-burchberg.png"
-                        alt="Praagse Burchberg segment"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <span className="text-xl font-medium tracking-wide text-gray-800 block">Praagse Burchtberg</span>
-                      <p className="text-base font-medium text-gray-600 mt-1">Length: 990m | Grade: 7,8%</p>
-                    </div>
-                  </div>
-                  {/* Hover Image */}
-                  <div className="opacity-0 group-hover:opacity-100 absolute z-10 -top-3 left-0 md:right-0 md:left-auto transform -translate-y-full transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-white p-2 rounded-lg shadow-lg">
-                      <div className="relative w-[435px] h-[272px]">
-                        <Image
-                          src="/praagse-burchberg.png"
-                          alt="Praagse Burchberg segment"
-                          fill
-                          className="object-cover rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {EVENT_CONFIG.segments.map((segment, index) => (
+                  <SegmentCard
+                    key={segment.name}
+                    name={segment.name}
+                    length={segment.length}
+                    grade={segment.grade}
+                    image={segment.image}
+                    position={index % 2 === 0 ? "left" : "right"}
+                  />
+                ))}
               </div>
             </div>
 
@@ -509,10 +412,11 @@ export default function Home() {
                   <div className="md:w-2/3 relative h-96 md:h-full">
                     <Image
                       src="/hudy-press-release.png"
-                      alt="Cyclists racing on cobblestones"
+                      alt="Press release image - UAE Team Emirates racing schedule update"
                       fill
                       className="object-cover object-center"
                       sizes="(max-width: 768px) 100vw, 66vw"
+                      loading="lazy"
                     />
                   </div>
                   <div className="md:w-1/3 p-8 md:overflow-y-auto">
@@ -540,9 +444,9 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="mt-6">
-                      <a href="#" className="inline-flex items-center text-primary font-semibold hover:text-primary-hover">
+                      <a href="#" className="inline-flex items-center text-primary font-semibold hover:text-primary-hover" aria-label="Read more about Tadej Pogačar and Honza Hudeček news">
                         Read more 
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </a>
@@ -621,7 +525,7 @@ export default function Home() {
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-primary transition-colors">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
@@ -635,7 +539,7 @@ export default function Home() {
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-accent transition-colors">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
@@ -649,7 +553,7 @@ export default function Home() {
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-yellow-accent transition-colors">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-yellow-accent/10 rounded-full flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                     </svg>
                   </div>
@@ -674,191 +578,16 @@ export default function Home() {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Testimonial 1 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Fakt sorry, ale na nějaký kostky vám zase seru. Nebudu tu&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/verca.png"
-                          alt="Veronika Přikrylová, femme fatale pražské cyklistické komunity"
-                          fill
-                          className="object-cover object-top"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Veronika Přikrylová</h4>
-                      <p className="text-gray-600">Femme fatale pražské cyklistické komunity</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Testimonial 2 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-yellow-accent rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Hele, carboloadovat coca-colou mi nepřijde úplně správný. Co říká Johnny Kraus není pravda, vůbec jsem nevěděl, že to tehdy byl závod.&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/vakoc.png"
-                          alt="Petr Vakoč"
-                          fill
-                          className="object-cover object-center"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Petr Vakoč</h4>
-                      <p className="text-gray-600">Bývalý silniční profesionál a současná gravelová superstar</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Testimonial 3 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Pro mě je to vrchol sezony, připravuju se na to celej rok. Jediná věc, se kterou si zatím nevim rady, je Jankův spurt.&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/mekejs.png"
-                          alt="Filip Měkota"
-                          fill
-                          className="object-cover object-center"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Filip Měkota</h4>
-                      <p className="text-gray-600">Pražský sportovní univerzál, dobře aproximovatelný koulí</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 4 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-dark-blue rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Hlavně doufám, že Janek zase nezlomí svoje kolo. Napiš tam, že můj největší úspěch je, že jsem Petra Vakoče porazil v časovce do vrchu&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/kraus.png"
-                          alt="Jan Kraus"
-                          fill
-                          className="object-cover object-center"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Jan Kraus</h4>
-                      <p className="text-gray-600">Cyklistický dráhový internacionál</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 5 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-olive-600 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Budete to mít hezký :)&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/prager.png"
-                          alt="Martin Práger"
-                          fill
-                          className="object-cover object-center"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Martin Práger</h4>
-                      <p className="text-gray-600">Marketingový expert a cyklistický teoretik</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial 6 */}
-              <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-brown-700 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <p className="text-gray-700 italic mb-6">
-                    &ldquo;Baf. Mám klobny, mám grilovací sýr, ale už jsem na budgetu. Mám vzít promítačku?&rdquo;
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src="/burjada.png"
-                          alt="Adam Burjan"
-                          fill
-                          className="object-cover object-center"
-                          sizes="48px"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dark-blue">Adam Burjan</h4>
-                      <p className="text-gray-600">Internacionální propagátor bikepackingu a bezpražcové železniční dopravy</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {EVENT_CONFIG.testimonials.map((testimonial) => (
+                <TestimonialCard
+                  key={testimonial.name}
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  role={testimonial.role}
+                  image={testimonial.image}
+                  colorClass={testimonial.colorClass}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -876,11 +605,13 @@ export default function Home() {
             <div className="max-w-5xl mx-auto">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative pb-[75%] sm:pb-[65%] md:pb-[60%] lg:pb-[55%]">
-                  <iframe 
-                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=47.488&lon=14.458&detailLat=50.1&detailLon=14.467&detail=true&pressure=true&message=true" 
+                  <iframe
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=47.488&lon=14.458&detailLat=50.1&detailLon=14.467&detail=true&pressure=true&message=true"
                     frameBorder="0"
                     title="Weather Forecast Map"
                     className="absolute inset-0 w-full h-full"
+                    sandbox="allow-scripts allow-same-origin"
+                    loading="lazy"
                     allowFullScreen
                   ></iframe>
                 </div>
@@ -898,7 +629,7 @@ export default function Home() {
 
         {/* Call to Action Section - New section */}
         <section className="mb-24 py-16 bg-dark-blue text-white -mx-4 px-4 overflow-hidden relative">
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-full w-full" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 4.528c.31-.11.65-.11.96 0l7.133 2.56a1.5 1.5 0 010 2.82L11.96 12.472a1.5 1.5 0 01-.96 0L3.867 9.91a1.5 1.5 0 010-2.82L10 4.528zm.96 11.448a1.5 1.5 0 01-.96 0l-7.133-2.56a1.5 1.5 0 010-2.82l1.473-.53a1 1 0 00.945 1.345h9.43a1 1 0 00.945-1.345l1.473.53a1.5 1.5 0 010 2.82l-7.133 2.56z" clipRule="evenodd" />
             </svg>
@@ -918,7 +649,7 @@ export default function Home() {
                   className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300 flex items-center gap-2"
                   download
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   Read Director&apos;s Word
@@ -927,7 +658,7 @@ export default function Home() {
               <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -938,7 +669,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-yellow-accent rounded-full flex items-center justify-center mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
@@ -977,18 +708,18 @@ export default function Home() {
                 The premier cycling event in Prague, challenging riders with beautiful routes and unforgettable experiences.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-yellow-accent">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <a href="#" className="text-white hover:text-yellow-accent" aria-label="Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
                   </svg>
                 </a>
-                <a href="#" className="text-white hover:text-yellow-accent">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <a href="#" className="text-white hover:text-yellow-accent" aria-label="Twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.189-1.118.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z" />
                   </svg>
                 </a>
-                <a href="https://www.instagram.com/cc_currywurst?igsh=Y2EzbXNvY3VuMjcy" className="text-white hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://www.instagram.com/cc_currywurst?igsh=Y2EzbXNvY3VuMjcy" className="text-white hover:text-yellow-accent" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.668-.072 4.948-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.072-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
@@ -1009,13 +740,13 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span className="text-gray-300">info@rondevanpraageren.cz</span>
                 </li>
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span className="text-gray-300">+420 721 857 781</span>
@@ -1033,6 +764,13 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Strava embed script with error handling */}
+      <Script
+        src="https://strava-embeds.com/embed.js"
+        strategy="afterInteractive"
+        onError={() => setStravaError(true)}
+      />
     </div>
   );
 }
