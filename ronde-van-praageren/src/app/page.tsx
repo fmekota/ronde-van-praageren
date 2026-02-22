@@ -410,7 +410,58 @@ export default function Home() {
             </div>
             
             <div className="max-w-6xl mx-auto">
-              {/* News Item */}
+              {/* News Item - Jan Hajek Injury */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
+                <div className="md:flex md:h-[600px]">
+                  <div className="md:w-2/3 relative h-96 md:h-full">
+                    <Image
+                      src="/hajcus-1.jpg"
+                      alt="Jan Hajek, Mistr světa ve veslování a favorit Ronde van Praageren"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 66vw"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="md:w-1/3 p-8 md:overflow-y-auto">
+                    <div className="uppercase tracking-wide text-sm text-primary font-semibold mb-1">Breaking News</div>
+                    <h3 className="text-2xl font-bold text-dark-blue mb-2">Jeden z favoritů Ronde van Praageren 2026 Jan Hájek si poranil kotník při horolezecké expedici</h3>
+                    <p className="text-gray-600 mb-4">February 22, 2026</p>
+                    <div className="text-gray-700 leading-relaxed">
+                      <p className="mb-4">
+                        <strong>Rakouské Alpy.</strong> Šokující zpráva zasáhla cyklistický svět jen několik týdnů před startem šestého ročníku Ronde van Praageren. Jan Hájek, jeden z největších favoritů letošního závodu a bývalý mistr světa ve veslování, utrpěl vážné zranění kotníku během horolezecké expedice v rakouských Alpách.
+                      </p>
+                      <p className="mb-4">
+                        Hájek, známý svým neortodoxním přístupem k tréninku, se rozhodl strávit únorové týdny lezením po zasněžených vrcholech místo tradičních kilometrů na kole. &bdquo;Chtěl jsem posílit mentální odolnost a naučit se pracovat s výškou,&ldquo; vysvětlil Hájek z nemocničního lůžka v Innsbrucku. &bdquo;Bohužel jsem zapomněl, že na kole kotníky tolik nepoužívám.&ldquo;
+                      </p>
+                      <p className="mb-4">
+                        Podle očitých svědků k nehodě došlo při sestupu z vrcholu Großglockner, kdy Hájek údajně &bdquo;chtěl předjet pomalejšího turistu a zvolil alternativní linii přes ledovec.&ldquo; Záchranná služba jej transportovala jeho spolehlivým vozem značky Ford (t.č. v nouzovém režimu) do nejbližší nemocnice.
+                      </p>
+                      <p className="mb-4">
+                        Sportovní ředitel CC Currywurst odmítl situaci komentovat, nicméně zdroje blízké týmu naznačují, že Hájkovo tréninkové manko výrazně zamíchá kartami před startem Ronde van Praageren. &bdquo;Honza byl jediný, od koho jsme očekávali, že na Buštěhradbergu bude držet krok s Krausem,&ldquo; uvedl anonymní člen pelotonu. &bdquo;Teď je závod úplně otevřený.&ldquo;
+                      </p>
+                      <p>
+                        Hájek nicméně navzdory vážnému zranění již tvrdě pracuje s rehabilitačními lékaři a věří, že se vrátí silnější než dříve. Na dotaz, zda lituje své horolezecké odbočky, odpověděl: &bdquo;Vůbec ne. Aspoň mám výmluvu, proč jsem letos nevyhrál.&ldquo;
+                      </p>
+                    </div>
+                    <div className="mt-6">
+                      <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
+                        <Image
+                          src="/hajcus-2.jpeg"
+                          alt="Jan Hajek na horolezecké expedici před zraněním"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 300px"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text-sm text-gray-500 mt-2 italic text-center">Hájek krátce před osudným pádem</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* News Item - Hudeček */}
               <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-10">
                 <div className="md:flex md:h-[600px]">
                   <div className="md:w-2/3 relative h-96 md:h-full">
