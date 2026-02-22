@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import Script from "next/script";
-import { SegmentCard, TestimonialCard } from "@/components";
+import { SegmentCard, TestimonialCard, RaceReport2025 } from "@/components";
 import { EVENT_CONFIG } from "@/config/event";
 
 export default function Home() {
@@ -84,6 +84,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Race Report 2025 Section */}
+      <RaceReport2025 />
 
       {/* THE FAST FACTS Section - Added to match Canva design */}
       <section className="py-20 bg-yellow-accent">
@@ -282,7 +285,7 @@ export default function Home() {
                       <div className="flex flex-col items-center justify-center h-full p-8 text-center">
                         <p className="text-gray-600 mb-4">Unable to load route map.</p>
                         <a
-                          href="https://www.strava.com/routes/3199162964264401098"
+                          href="https://www.strava.com/routes/3433398817331358612"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-primary hover:underline"
@@ -294,7 +297,7 @@ export default function Home() {
                       <div
                         className="strava-embed-placeholder h-full"
                         data-embed-type="route"
-                        data-embed-id="3199162964264401098"
+                        data-embed-id="3433398817331358612"
                         data-style="standard"
                         data-from-embed="false"
                       ></div>
