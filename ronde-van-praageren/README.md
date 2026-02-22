@@ -1,191 +1,313 @@
-# Ronde van Praageren - Cycling Race Website
+# Ronde van Praageren
 
-A simple, mobile-friendly website for the Ronde van Praageren cycling race event. Built with Next.js and TailwindCSS.
+A cycling race event website built with Next.js 15, React 19, and TailwindCSS 4. Features a registration system with email verification, public startlist, and admin dashboard.
 
 ## Features
 
-- Clean, responsive design optimized for mobile and desktop
-- Event details section with date, location, and race information
-- Strava route map integration (placeholder ready for your embed code)
-- Registration form with Formspree integration
+- Responsive landing page with event details
+- Strava route map integration
+- **Registration system with email verification**
+- **Public startlist showing verified participants**
+- **Admin dashboard with CSV export**
+- Archive pages for past events
 - Dark mode support
 
-## Getting Started
+## Quick Start (Mock Mode)
 
-### Prerequisites
+Run the development server without any external services:
 
-- Node.js 18.x or later
+```bash
+cd ronde-van-praageren
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+**Mock mode features:**
+- In-memory database (data resets on server restart)
+- Verification links printed to terminal instead of sent via email
+- No external service accounts needed
+
+## Prerequisites
+
+- Node.js 18+
 - npm or yarn
 
-### Installation
+## Project Structure
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/ronde-van-praageren.git
-cd ronde-van-praageren
+```
+src/
+├── app/
+│   ├── page.tsx              # Main landing page
+│   ├── register/             # Registration form
+│   ├── verify/               # Email verification status
+│   ├── startlist/            # Public participant list
+│   ├── admin/                # Admin dashboard
+│   │   └── login/            # Admin authentication
+│   ├── api/
+│   │   ├── verify/           # Email verification endpoint
+│   │   └── admin/            # Admin auth endpoints
+│   └── archive/              # Historical event pages
+├── components/
+│   ├── registration/         # Form components
+│   └── ...                   # UI components
+├── lib/
+│   ├── db/                   # Database operations (Redis + mock)
+│   ├── email/                # Email service (Resend + mock)
+│   ├── actions/              # Server actions
+│   └── schemas/              # Zod validation schemas
+└── config/
+    ├── event.ts              # Event configuration
+    └── registration.ts       # Registration settings
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
+## Testing the Registration Flow
+
+### 1. Submit Registration
+
+Go to http://localhost:3000/register and fill out the form:
+- First name, last name, email
+- Optional: club, Strava profile URL
+- Emergency contact information
+- Accept terms and conditions
+
+### 2. Verify Email
+
+**In mock mode:** Check your terminal for output like:
+
+```
+============================================================
+[Mock Email] VERIFICATION EMAIL
+============================================================
+To: your@email.com
+Subject: Verify your Ronde van Praageren 2026 registration
+------------------------------------------------------------
+Click this link to verify your email:
+
+  http://localhost:3000/api/verify?token=abc123...
+
+This link expires in 24 hours.
+============================================================
 ```
 
-3. Run the development server:
+Click the verification link or copy it to your browser.
+
+### 3. View Startlist
+
+After verification, your name appears on the public startlist:
+http://localhost:3000/startlist
+
+### 4. Admin Dashboard
+
+Access the admin panel at http://localhost:3000/admin
+
+**Default password:** `local-dev-password`
+
+Features:
+- View all registrations (verified and pending)
+- See registration statistics
+- Export to CSV
+
+## Environment Variables
+
+Create a `.env.local` file in the project root:
+
 ```bash
+# Copy from .env.example
+cp .env.example .env.local
+```
+
+### Required Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `ADMIN_SECRET` | Password for admin dashboard | Yes |
+| `NEXT_PUBLIC_BASE_URL` | Site URL for email links | Yes |
+| `KV_REST_API_URL` | Upstash Redis REST URL | No* |
+| `KV_REST_API_TOKEN` | Upstash Redis REST token | No* |
+| `RESEND_API_KEY` | Resend API key | No* |
+
+*Mock implementations are used when these are not set.
+
+### Example `.env.local`
+
+```bash
+# Required
+ADMIN_SECRET=local-dev-password
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# Optional - for real services
+KV_REST_API_URL=https://your-db.upstash.io
+KV_REST_API_TOKEN=your-token
+RESEND_API_KEY=re_your_api_key
+
+# Force mock mode even with credentials set
+# USE_MOCK_DB=true
+# USE_MOCK_EMAIL=true
+```
+
+## Setting Up Real Services
+
+### Upstash Redis (Database)
+
+1. Create a free account at https://console.upstash.com
+2. Click "Create Database"
+3. Select a region close to your deployment
+4. Copy the REST URL and token from the dashboard
+5. Add to `.env.local`:
+   ```
+   KV_REST_API_URL=https://your-db.upstash.io
+   KV_REST_API_TOKEN=your-token
+   ```
+
+### Resend (Email)
+
+1. Create a free account at https://resend.com
+2. Go to API Keys in the dashboard
+3. Create a new API key
+4. Add to `.env.local`:
+   ```
+   RESEND_API_KEY=re_your_api_key
+   ```
+
+**Free tier limits:**
+- 100 emails/day
+- 3,000 emails/month
+
+**Note:** In development, emails to unverified domains appear in your Resend dashboard instead of being delivered.
+
+## Available Scripts
+
+```bash
+# Start development server
 npm run dev
-# or
-yarn dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
+## Registration Configuration
 
-## Customization
+Edit `src/config/registration.ts` to customize:
 
-### Strava Map Integration
+```typescript
+export const REGISTRATION_CONFIG = {
+  maxParticipants: 800,              // Capacity limit
+  registrationOpens: "2024-01-01",   // When registration opens
+  registrationCloses: "2026-06-14",  // When registration closes
+  tokenExpiryMs: 24 * 60 * 60 * 1000, // Verification link expiry (24h)
+  rateLimits: {
+    registrationsPerIp: 5,           // Rate limit per IP
+    windowMs: 60 * 60 * 1000,        // Rate limit window (1 hour)
+  },
+  email: {
+    from: "Ronde van Praageren <noreply@rondevanpraageren.com>",
+    replyTo: "info@rondevanpraageren.com",
+  },
+};
+```
 
-The website already includes a Strava route map with ID 3199162964264401098. If you want to use a different route:
+## Strava Map Integration
+
+The website includes a Strava route map. To use a different route:
 
 1. Go to your Strava route
 2. Click on the "Share" button
-3. Select "Embed" and copy the embed code
-4. Replace the existing Strava embed code in `src/app/page.tsx` with your new embed code:
+3. Select "Embed" and copy the route ID
+4. Update the embed code in `src/app/page.tsx`:
 
 ```jsx
-<div 
-  className="strava-embed-placeholder" 
-  data-embed-type="route" 
-  data-embed-id="YOUR_ROUTE_ID_HERE" 
-  data-style="standard" 
+<div
+  className="strava-embed-placeholder"
+  data-embed-type="route"
+  data-embed-id="YOUR_ROUTE_ID_HERE"
+  data-style="standard"
   data-from-embed="false"
 ></div>
 ```
 
-The script to load the Strava embed is already included in the page component.
-
-### Form Submission
-
-The form is set up to use Formspree for easy email submissions:
-
-1. Create a free account at [Formspree](https://formspree.io/)
-2. Set up a new form and get your endpoint URL
-3. Update the form in `src/app/page.tsx` by adding the action attribute with your Formspree endpoint:
-
-```jsx
-<form 
-  action="https://formspree.io/f/your-form-id" 
-  method="POST" 
-  className="max-w-lg mx-auto"
-  onSubmit={handleSubmit}
->
-```
-
 ## Deployment
 
-### Deploying to Vercel (Recommended)
+### Vercel (Recommended)
 
-This website is optimized for deployment on Vercel. Follow these steps for a seamless deployment:
-
-1. **Create a GitHub Repository**
-   - Create a new repository on GitHub
-   - Push your code to the repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/ronde-van-praageren.git
-   git push -u origin main
+1. Push your code to GitHub
+2. Import project in Vercel dashboard
+3. Add environment variables in project settings:
    ```
+   KV_REST_API_URL=https://your-db.upstash.io
+   KV_REST_API_TOKEN=your-production-token
+   RESEND_API_KEY=re_your_production_key
+   ADMIN_SECRET=your-secure-admin-password
+   NEXT_PUBLIC_BASE_URL=https://your-domain.com
+   ```
+4. Deploy
 
-2. **Sign Up for Vercel**
-   - Go to [Vercel](https://vercel.com/) and sign up for an account
-   - You can sign up using your GitHub account for easier integration
+### Setting Up Services for Production
 
-3. **Import Your Repository**
-   - From the Vercel dashboard, click "Add New..." and select "Project"
-   - Select the GitHub repository you created
-   - Vercel will automatically detect that it's a Next.js project
+#### Upstash Redis via Vercel Integration
 
-4. **Configure Your Project**
-   - Project Name: Enter a name for your deployment (e.g., "ronde-van-praageren")
-   - Framework Preset: Next.js (should be auto-detected)
-   - Root Directory: Leave as `.` (default)
-   - Build and Output Settings: Leave as default
+1. In Vercel, go to your project's "Storage" tab
+2. Click "Create Database" → "Upstash Redis"
+3. Environment variables are automatically added
 
-5. **Environment Variables (Optional)**
-   - If you're using any API keys or environment variables, add them in the "Environment Variables" section
+#### Resend
 
-6. **Deploy**
-   - Click "Deploy"
-   - Vercel will build and deploy your website
-   - Once complete, you'll receive a URL where your site is live (e.g., https://ronde-van-praageren.vercel.app)
+1. Get a production API key from Resend dashboard
+2. Verify your sending domain for better deliverability
+3. Add the API key to Vercel environment variables
 
-7. **Custom Domain (Optional)**
-   - In your project settings on Vercel, go to "Domains"
-   - Add your custom domain and follow the instructions to set up DNS
+## Security Features
 
-8. **Continuous Deployment**
-   - Any changes pushed to your GitHub repository will automatically trigger a new deployment
-   - You can configure branch deployments in the project settings
+- **Email verification:** Required before appearing on startlist
+- **Rate limiting:** 5 registrations per IP per hour
+- **Honeypot field:** Catches automated bot submissions
+- **Token expiry:** Verification links expire in 24 hours
+- **Admin auth:** Password-protected dashboard with HTTP-only cookies
 
-#### Troubleshooting Vercel Deployment
+## Troubleshooting
 
-If you encounter the error "No Next.js version could be detected in your project":
+### "Missing environment variables" error
 
-1. Ensure your package.json has Next.js listed in the dependencies section (not just devDependencies):
-```json
-"dependencies": {
-  "next": "15.2.2",
-  "react": "^19.0.0",
-  "react-dom": "^19.0.0"
-}
-```
+The app runs in mock mode without Redis/Resend credentials. If you see this error during build, it's expected - the mock will be used at runtime.
 
-2. Make sure the vercel.json file exists in your project root with the following content:
-```json
-{
-  "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install"
-}
-```
+### Verification link not working
 
-3. Try redeploying after making these changes.
+- Check the token hasn't expired (24 hours)
+- Ensure `NEXT_PUBLIC_BASE_URL` matches your actual URL
+- In mock mode, verify the full link was copied from terminal
 
-### Alternative Deployment Options
+### Admin login not working
 
-#### Static Export for Other Hosting Services
+- Default password is `local-dev-password`
+- Check `ADMIN_SECRET` in `.env.local`
+- Clear cookies and try again
 
-If you prefer to host on another platform (Netlify, GitHub Pages, etc.):
+### Data not persisting
 
-1. Modify `next.config.ts` to enable static exports:
-```typescript
-const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  trailingSlash: true,
-};
-```
+In mock mode, data is stored in memory and resets when the server restarts. Use Upstash Redis for persistent storage.
 
-2. Build the static site:
-```bash
-npm run build
-```
+### Build fails with Redis/Resend errors
 
-3. The static files will be generated in the `out` directory, which you can deploy to any static hosting service.
+The app uses lazy initialization so it should build without credentials. If you see errors:
+1. Check that you're using the latest code
+2. Try `rm -rf .next && npm run build`
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React framework with App Router
+- [React 19](https://react.dev/) - UI library
+- [TailwindCSS 4](https://tailwindcss.com/) - Styling
+- [Upstash Redis](https://upstash.com/) - Serverless database
+- [Resend](https://resend.com/) - Email service
+- [Zod](https://zod.dev/) - Schema validation
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgements
-
-- [Next.js](https://nextjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Formspree](https://formspree.io/)
-- [Vercel](https://vercel.com/)
+MIT

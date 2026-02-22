@@ -46,7 +46,8 @@ export default function Home() {
               <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors">Route</a></li>
               <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors">Schedule</a></li>
               <li><a href="/archive" className="text-white hover:text-yellow-accent transition-colors">Archive</a></li>
-              <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-white hover:text-yellow-accent transition-colors" target="_blank" rel="noopener noreferrer">Register</a></li>
+              <li><a href="/startlist" className="text-white hover:text-yellow-accent transition-colors">Startlist</a></li>
+              <li><a href="/register" className="text-white hover:text-yellow-accent transition-colors">Register</a></li>
             </ul>
           </nav>
         </div>
@@ -63,11 +64,9 @@ export default function Home() {
             <p className="text-xl md:text-2xl font-bold">March 28, 2026</p>
           </div>
           <div className="mt-12 flex flex-col md:flex-row gap-4">
-            <a 
-              href="https://www.strava.com/clubs/1048077/group_events/1899385" 
+            <a
+              href="/register"
               className="btn-primary py-3 px-8 text-lg rounded-md"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Register Now
             </a>
@@ -141,8 +140,8 @@ export default function Home() {
               <p className="text-gray-700 mb-8">
                 Find out when and where to<br />register for Ronde
               </p>
-              <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide" target="_blank" rel="noopener noreferrer">
-                LEARN MORE
+              <a href="/register" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide">
+                REGISTER NOW
               </a>
             </div>
           </div>
@@ -696,7 +695,7 @@ export default function Home() {
                 Join hundreds of cyclists in Prague&apos;s most authentic Flemish-style race
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="btn-primary py-4 px-8 text-lg rounded-md" target="_blank" rel="noopener noreferrer">
+                <a href="/register" className="btn-primary py-4 px-8 text-lg rounded-md">
                   Register Now
                 </a>
                 <a 
@@ -788,7 +787,8 @@ export default function Home() {
                 <li><a href="#route" className="text-gray-300 hover:text-yellow-accent">Race Route</a></li>
                 <li><a href="#schedule" className="text-gray-300 hover:text-yellow-accent">Schedule</a></li>
                 <li><a href="/archive" className="text-gray-300 hover:text-yellow-accent">Archive</a></li>
-                <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-gray-300 hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">Registration</a></li>
+                <li><a href="/startlist" className="text-gray-300 hover:text-yellow-accent">Startlist</a></li>
+                <li><a href="/register" className="text-gray-300 hover:text-yellow-accent">Registration</a></li>
               </ul>
             </div>
             

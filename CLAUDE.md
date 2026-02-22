@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Ronde van Praageren is a cycling race event website built with Next.js 15 and TailwindCSS 4. The main project files are in the `ronde-van-praageren/` subdirectory.
+Ronde van Praageren is a cycling race event website built with Next.js 15, React 19, and TailwindCSS 4. The main project files are in the `ronde-van-praageren/` subdirectory.
 
 ## Commands
 
@@ -20,20 +20,24 @@ npm start        # Start production server
 
 ## Architecture
 
-- **Single-page application**: The entire website is in `src/app/page.tsx` (~1000 lines)
-- **Styling**: TailwindCSS with custom color variables defined in `src/app/globals.css`
-- **Client-side rendering**: Uses `"use client"` directive for Strava embed script loading via useEffect
+- **App Router**: Next.js 15 App Router with pages in `src/app/`
+- **Client Components**: Main page uses `"use client"` for Strava embed script loading
+- **Centralized Config**: Event data (dates, segments, testimonials, sponsors) in `src/config/event.ts`
+- **Reusable Components**: Card components in `src/components/` (SegmentCard, TestimonialCard, EventDetailCard)
+- **Archive Pages**: Historical event data at `/archive` with year-specific subpages
 
 ## Key Files
 
-- `ronde-van-praageren/src/app/page.tsx` - Main page with all sections
-- `ronde-van-praageren/src/app/globals.css` - Custom CSS variables and utility classes
-- `ronde-van-praageren/src/app/layout.tsx` - Root layout with metadata
-- `ronde-van-praageren/public/` - Static assets (images, PDF)
+- `src/app/page.tsx` - Main landing page with all sections
+- `src/config/event.ts` - Centralized event configuration (EVENT_CONFIG constant)
+- `src/components/` - Reusable UI components with barrel export in `index.ts`
+- `src/app/globals.css` - TailwindCSS 4 with custom color theme via `@theme inline`
+- `src/app/archive/` - Archive pages for past events
+- `src/config/archive/` - Historical event data by year
 
 ## Color Theme
 
-Custom CSS variables in `globals.css`:
+Custom CSS variables in `globals.css` using TailwindCSS 4's `@theme inline`:
 - `--primary`: #FF5733 (orange-red)
 - `--accent`: #3CAEA3 (teal)
 - `--yellow-accent`: #F6D55C
@@ -43,9 +47,8 @@ Custom CSS variables in `globals.css`:
 
 ## Third-Party Integrations
 
-- **Strava**: Route embed (ID: 3199162964264401098) loaded via script in useEffect
+- **Strava**: Route embed loaded via `next/script` with error handling fallback
 - **Windy.com**: Weather forecast iframe (Prague coordinates)
-- **Formspree**: Ready for form submissions (requires configuration)
 
 ## Deployment
 
