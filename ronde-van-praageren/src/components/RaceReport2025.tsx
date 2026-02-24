@@ -19,7 +19,7 @@ const results: ResultEntry[] = [
   { position: 6, name: "Slavík", points: "8" },
   { position: 7, name: "Burjan", points: "7" },
   { position: 8, name: "Macek", points: "5" },
-  { position: 9, name: "Balabán", points: "-", dnf: true },
+  { position: 9, name: "Balabán", points: "0"},
   { position: 10, name: "Rýzlerová", points: "-", dnf: true },
 ];
 
