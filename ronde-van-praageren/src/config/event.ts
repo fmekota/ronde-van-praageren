@@ -28,8 +28,19 @@ export const EVENT_CONFIG = {
 
   // URLs
   urls: {
-    stravaRegistration: "https://www.strava.com/clubs/1048077/group_events/1899385",
-    stravaRouteId: "3199162964264401098",
+    strava: {
+      clubId: "1048077",
+      main: {
+        eventId: "3462118806520971724",
+        routeId: "3433398817331358612",
+        name: "110km Main Course",
+      },
+      short: {
+        eventId: "3462119196028612456",
+        routeId: "3460704370221626424",
+        name: "Short Course",
+      },
+    },
     instagram: "https://www.instagram.com/cc_currywurst?igsh=Y2EzbXNvY3VuMjcy",
     directorsPdf: "/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf",
   },
@@ -201,3 +212,10 @@ export type EventConfig = typeof EVENT_CONFIG;
 export type Segment = (typeof EVENT_CONFIG.segments)[number];
 export type Testimonial = (typeof EVENT_CONFIG.testimonials)[number];
 export type ScheduleItem = (typeof EVENT_CONFIG.schedule)[number];
+
+// Helper functions for building Strava URLs
+export const getStravaEventUrl = (eventId: string) =>
+  `https://www.strava.com/clubs/${EVENT_CONFIG.urls.strava.clubId}/group_events/${eventId}`;
+
+export const getStravaRouteUrl = (routeId: string) =>
+  `https://www.strava.com/routes/${routeId}`;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { EVENT_CONFIG, getStravaEventUrl } from "@/config/event";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -61,9 +62,9 @@ export const metadata: Metadata = {
 const eventJsonLd = {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  name: "Ronde van Praageren 2026",
+  name: `${EVENT_CONFIG.name} ${EVENT_CONFIG.year}`,
   description:
-    "6th Annual Prague Cobbled Classic - A 110km cycling race featuring cobblestones, steep climbs, and Flemish-style racing through Prague.",
+    `${EVENT_CONFIG.tagline} - A ${EVENT_CONFIG.distance} cycling race featuring cobblestones, steep climbs, and Flemish-style racing through Prague.`,
   startDate: "2026-03-28T10:00:00+01:00",
   endDate: "2026-03-28T18:00:00+01:00",
   eventStatus: "https://schema.org/EventScheduled",
@@ -73,29 +74,29 @@ const eventJsonLd = {
     name: "Výstaviště Praha",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Výstaviště",
+      streetAddress: EVENT_CONFIG.location.startingPoint,
       addressLocality: "Prague",
       addressCountry: "CZ",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 50.1,
-      longitude: 14.467,
+      latitude: EVENT_CONFIG.location.coordinates.lat,
+      longitude: EVENT_CONFIG.location.coordinates.lon,
     },
   },
   organizer: {
     "@type": "Organization",
     name: "CC Currywurst",
-    url: "https://www.instagram.com/cc_currywurst",
+    url: EVENT_CONFIG.urls.instagram,
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.strava.com/clubs/1048077/group_events/1899385",
+    url: getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId),
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
   },
   sport: "Cycling",
-  maximumAttendeeCapacity: 800,
+  maximumAttendeeCapacity: EVENT_CONFIG.maxRiders,
 };
 
 export default function RootLayout({

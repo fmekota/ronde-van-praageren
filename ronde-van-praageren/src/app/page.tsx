@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import Script from "next/script";
 import { SegmentCard, TestimonialCard, RaceReport2025 } from "@/components";
-import { EVENT_CONFIG } from "@/config/event";
+import { EVENT_CONFIG, getStravaEventUrl, getStravaRouteUrl } from "@/config/event";
 
 export default function Home() {
   const [stravaError, setStravaError] = useState(false);
@@ -46,7 +46,7 @@ export default function Home() {
               <li><a href="#route" className="text-white hover:text-yellow-accent transition-colors">Route</a></li>
               <li><a href="#schedule" className="text-white hover:text-yellow-accent transition-colors">Schedule</a></li>
               <li><a href="/archive" className="text-white hover:text-yellow-accent transition-colors">Archive</a></li>
-              <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-white hover:text-yellow-accent transition-colors" target="_blank" rel="noopener noreferrer">Register</a></li>
+              <li><a href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)} className="text-white hover:text-yellow-accent transition-colors" target="_blank" rel="noopener noreferrer">Register</a></li>
             </ul>
           </nav>
         </div>
@@ -63,8 +63,8 @@ export default function Home() {
             <p className="text-xl md:text-2xl font-bold">March 28, 2026</p>
           </div>
           <div className="mt-12 flex flex-col md:flex-row gap-4">
-            <a 
-              href="https://www.strava.com/clubs/1048077/group_events/1899385" 
+            <a
+              href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)}
               className="btn-primary py-3 px-8 text-lg rounded-md"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +141,7 @@ export default function Home() {
               <p className="text-gray-700 mb-8">
                 Find out when and where to<br />register for Ronde
               </p>
-              <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide" target="_blank" rel="noopener noreferrer">
+              <a href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)} className="inline-block py-3 px-6 bg-brown-700 text-white font-bold rounded hover:bg-brown-800 transition duration-300 uppercase tracking-wide" target="_blank" rel="noopener noreferrer">
                 LEARN MORE
               </a>
             </div>
@@ -238,16 +238,17 @@ export default function Home() {
         <section id="route" className="mb-24 py-16 bg-gray-100 -mx-4 px-4">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-dark-blue">Race Route</h2>
+              <h2 className="text-4xl font-bold mb-4 text-dark-blue">Race Routes</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore the challenging 110km route through Prague&apos;s most scenic landscapes
+                Explore the challenging routes through Prague&apos;s most scenic landscapes
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Race Director Message Card */}
               <div className="flex flex-col justify-center">
-                <div className="bg-white p-8 rounded-lg shadow-lg relative">
-                  <div className="flex flex-col">
+                <div className="bg-white p-8 rounded-lg shadow-lg relative h-full">
+                  <div className="flex flex-col h-full">
                     <h3 className="text-2xl font-bold mb-6 text-olive-500 text-center">FOLLOW THE RACE</h3>
                     <p className="text-lg text-gray-700 mb-8 text-center">
                       Study the terrain, even as you train. Prepare for the cobbles of Prague
@@ -264,9 +265,9 @@ export default function Home() {
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-center">Race Director Message</h3>
                     <p className="text-center text-gray-500 mb-6">A day full of cobblestones, steep climbs, and senseless racing</p>
-                    <div className="text-center">
-                      <a 
-                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
+                    <div className="text-center mt-auto">
+                      <a
+                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf"
                         className="inline-block py-3 px-6 bg-olive-600 text-white font-bold rounded hover:bg-olive-700 transition duration-300"
                         download
                       >
@@ -276,16 +277,21 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
-              <div className="h-full">
-                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden h-full">
-                  <div className="h-full">
-                    {/* Strava embed code */}
+
+              {/* Main Course Card - 110km */}
+              <div className="flex flex-col">
+                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                  <div className="text-center mb-4">
+                    <span className="inline-block bg-primary text-white px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wide">
+                      {EVENT_CONFIG.urls.strava.main.name}
+                    </span>
+                  </div>
+                  <div className="flex-grow min-h-[300px]">
                     {stravaError ? (
                       <div className="flex flex-col items-center justify-center h-full p-8 text-center">
                         <p className="text-gray-600 mb-4">Unable to load route map.</p>
                         <a
-                          href="https://www.strava.com/routes/3433398817331358612"
+                          href={getStravaRouteUrl(EVENT_CONFIG.urls.strava.main.routeId)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-primary hover:underline"
@@ -297,11 +303,65 @@ export default function Home() {
                       <div
                         className="strava-embed-placeholder h-full"
                         data-embed-type="route"
-                        data-embed-id="3433398817331358612"
+                        data-embed-id={EVENT_CONFIG.urls.strava.main.routeId}
                         data-style="standard"
                         data-from-embed="false"
                       ></div>
                     )}
+                  </div>
+                  <div className="text-center mt-4">
+                    <a
+                      href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)}
+                      className="inline-block py-3 px-6 bg-primary text-white font-bold rounded hover:bg-primary/90 transition duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register for Main Course
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Short Course Card */}
+              <div className="flex flex-col">
+                <div className="bg-white p-4 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                  <div className="text-center mb-4">
+                    <span className="inline-block bg-accent text-white px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wide">
+                      {EVENT_CONFIG.urls.strava.short.name}
+                    </span>
+                  </div>
+                  <div className="flex-grow min-h-[300px]">
+                    {stravaError ? (
+                      <div className="flex flex-col items-center justify-center h-full p-8 text-center">
+                        <p className="text-gray-600 mb-4">Unable to load route map.</p>
+                        <a
+                          href={getStravaRouteUrl(EVENT_CONFIG.urls.strava.short.routeId)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent hover:underline"
+                        >
+                          View route on Strava
+                        </a>
+                      </div>
+                    ) : (
+                      <div
+                        className="strava-embed-placeholder h-full"
+                        data-embed-type="route"
+                        data-embed-id={EVENT_CONFIG.urls.strava.short.routeId}
+                        data-style="standard"
+                        data-from-embed="false"
+                      ></div>
+                    )}
+                  </div>
+                  <div className="text-center mt-4">
+                    <a
+                      href={getStravaEventUrl(EVENT_CONFIG.urls.strava.short.eventId)}
+                      className="inline-block py-3 px-6 bg-accent text-white font-bold rounded hover:bg-accent/90 transition duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register for Short Course
+                    </a>
                   </div>
                 </div>
               </div>
@@ -696,7 +756,7 @@ export default function Home() {
                 Join hundreds of cyclists in Prague&apos;s most authentic Flemish-style race
               </p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="btn-primary py-4 px-8 text-lg rounded-md" target="_blank" rel="noopener noreferrer">
+                <a href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)} className="btn-primary py-4 px-8 text-lg rounded-md" target="_blank" rel="noopener noreferrer">
                   Register Now
                 </a>
                 <a 
@@ -788,7 +848,7 @@ export default function Home() {
                 <li><a href="#route" className="text-gray-300 hover:text-yellow-accent">Race Route</a></li>
                 <li><a href="#schedule" className="text-gray-300 hover:text-yellow-accent">Schedule</a></li>
                 <li><a href="/archive" className="text-gray-300 hover:text-yellow-accent">Archive</a></li>
-                <li><a href="https://www.strava.com/clubs/1048077/group_events/1899385" className="text-gray-300 hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">Registration</a></li>
+                <li><a href={getStravaEventUrl(EVENT_CONFIG.urls.strava.main.eventId)} className="text-gray-300 hover:text-yellow-accent" target="_blank" rel="noopener noreferrer">Registration</a></li>
               </ul>
             </div>
             
