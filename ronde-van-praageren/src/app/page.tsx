@@ -72,7 +72,7 @@ export default function Home() {
               Register Now
             </a>
             <a 
-              href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
+              href="/26_Ronde van Praageren_Úvodní slovo ředitele závodu " 
               className="bg-yellow-accent hover:bg-yellow-500 text-brown-800 py-3 px-8 border-2 border-yellow-accent rounded-md transition duration-300 flex items-center justify-center gap-2"
               download
             >
@@ -175,10 +175,8 @@ export default function Home() {
             
             <div className="w-full md:w-2/3">
               <blockquote className="text-gray-700 text-lg leading-relaxed mb-6">
-                &quot;Když se řekne cyklistika, vybaví se většině lidí jen jedno slovo: &ldquo;pavé&rdquo;. Co se ale skrývá v srdci tohoto pojmu a je skutečně padnoucí pro region střední Evropy? Již 5 let nacházíme opakovaně jak ve svých srdcích, tak v dlážděných ulicích v okolí Prahy, odpověď na tuto otázku ve znění: &ldquo;ne&rdquo;. Praze, jako odvěké součásti regionu Západních Flander, totiž mnohem vice sluší vlámština a s tím spojené náležité označení segmentů. Přitom dnes snad není pražského cyklisty, který by neměl povědomí o věhlasu Uibergu, Oude Wittemontu, Praagse Burchbergu nebo Muur Van Wijngaarden. Den plný kostek, prudkých stoupání, nesmyslného závodění, gastronomie, soudržnosti a svornosti, máte možnost zažít právě teď na Ronde Van Praageren. Přidej se k nám na nezapomenutelnou jízdu po stopách opravdové cyklistiky!.&quot;
-                <br /><br />
-                &quot;When we say cycling, most people think of one word: &lsquo;pavé&rsquo;. But what lies at the heart of this concept and is it truly fitting for the Central European region? For 5 years now, we have repeatedly found, both in our hearts and in the cobbled streets around Prague, the answer to this question: &lsquo;no&rsquo;. Prague, as an eternal part of the Western Flanders region, is much better suited to Flemish and the associated proper designation of segments. Today, there is hardly a Prague cyclist who would not be aware of the fame of Uiberg, Oude Wittemont, Praagse Burchberg or Muur Van Wijngaarden. A day full of cobblestones, steep climbs, senseless racing, gastronomy, cohesion and harmony - you have the opportunity to experience it right now at Ronde Van Praageren. Join us for an unforgettable ride following the footsteps of real cycling!&quot;
-              </blockquote>
+                &quot;Ronde Van Praageren vstupuje do šestého roku své existence a opět mohu konstatovat, že jsme zase úroveň závodu posunuli o stupeň výš.I přes verbální pošťuchování a drobné rozmíšky, co se týče financování a dodržování pravidel silničního provozu se nám podařilo domluvit účast hned dvou dalších cyklouskupení. Zároveň stihlo promptně přislíbit a zase odříci účast jedno další cyklouskupení, přičemž ke dni předvečeru závodu náhle klesl počet přihlášených o 25 %. Není tak jisté, zda se vůbec někdo dostaví. Objevuje se však na obzoru možnost mezispolkového boje, kdy se budou muset jednotliví závodníci vzdát svých osobních ambicí, aby byli maximalizovali šance svých týmových lídrů. Podaří se však dát vlastní výkonnostní cíle stranou? Ze strany pořádajícího spolku CC Currywurst je odpověď jasná: ne. Trasa zůstává prakticky stejná, jako vloni. Akorát jsme minimalizovali průjezdy centrem Prahy vzhledem k reakcím hraničícím s agresivitou vůči řediteli závodu, pročež se nepojede Lumírstraat ani Tuin van Eden. Nezoufejte však - ikonický Muur Van Wijngaarden jako jedno ze stoupání z prvního ročníku na trase zůstává. Klasicky se nejvíce těšíme na katastrofální mučení v okolí Buštěhradu, kde se děje vždycky to nejlepší závodění z celého ročníku. Vzhledem k velice vydatnému klání na loňském Krausbergu samozřejmě zařadíme tento kopec i letos.Oslovili jsme letos něco jako našeho sponzora - výrobce sportovní výživy MNSTRY Nutritions požadavkem, zda by se nechtěli podílet na sponzorování tohoto podniku. Reakcí bylo pouze zděšené “cože”? Věříme však, že jakmile pánové z MNSTRY uvidí magnitudu této akce, pochopí, jak velké sázky jsou ve hře. Po několika otravných mailech však německý kolospřislíbil dodat část cen pro účastníky.Věřím, že nás opět čeká závod, který bude stejně spektakulární a zábavný, jako bude nesmyslný a náročný.&quot;
+                </blockquote>
               <div className="flex items-center">
                 <div>
                   <p className="font-bold text-dark-blue text-xl">Janek &quot;Pedersen&quot; Lžičař</p>
@@ -267,7 +265,7 @@ export default function Home() {
                     <p className="text-center text-gray-500 mb-6">A day full of cobblestones, steep climbs, and senseless racing</p>
                     <div className="text-center mt-auto">
                       <a
-                        href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf"
+                        href="/26_Ronde van Praageren_Úvodní slovo ředitele závodu "
                         className="inline-block py-3 px-6 bg-olive-600 text-white font-bold rounded hover:bg-olive-700 transition duration-300"
                         download
                       >
@@ -760,7 +758,7 @@ export default function Home() {
                   Register Now
                 </a>
                 <a 
-                  href="/24_Ronde van Praageren_Úvodní slovo ředitele závodu.pdf" 
+                  href="/26_Ronde van Praageren_Úvodní slovo ředitele závodu " 
                   className="bg-transparent hover:bg-white/10 text-white text-lg py-4 px-8 border-2 border-white rounded-md transition duration-300 flex items-center gap-2"
                   download
                 >
